@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import BrandMark from '../brand/BrandMark'
+import { businessContact } from '../../config/business'
 
 export default function Footer() {
   return (
@@ -8,10 +10,7 @@ export default function Footer() {
           <div className="footer-brand">
             <Link to="/" className="nav-brand" style={{ display: 'inline-flex', marginBottom: 16 }}>
               <div className="nav-logo">
-                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-                  <rect width="36" height="36" rx="8" fill="url(#bsLogoGrad)"/>
-                  <path d="M22 4L12 21h6L15 32 27 15h-6.5L22 4z" fill="white"/>
-                </svg>
+                <BrandMark />
               </div>
               <div>
                 <div className="nav-brand-text">BlackStorm</div>
@@ -55,7 +54,7 @@ export default function Footer() {
 
       <div className="footer-bottom">
         <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
-          <p>&copy; 2025&ndash;2026 BlackStorm, LLC. All rights reserved.</p>
+          <p>&copy; 2025&ndash;2026 {businessContact.businessName} All rights reserved.</p>
           <div className="footer-status">
             <span className="status-dot" aria-hidden="true" />
             Service status by support request

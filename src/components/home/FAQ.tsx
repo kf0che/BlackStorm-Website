@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import ContactEmailLink from '../ui/ContactEmailLink'
 
 const faqs = [
   {
@@ -40,8 +41,8 @@ export default function FAQ() {
           <p>
             Still have questions?{' '}
             <Link to="/contact" style={{ color: 'var(--color-primary)' }}>Use our contact form</Link>
-            {' '}or email us at{' '}
-            <a href="mailto:hello@blackstorm.llc" style={{ color: 'var(--color-primary)' }}>hello@blackstorm.llc</a>.
+            {' '}or use our verified email once setup is complete:{' '}
+            <ContactEmailLink style={{ color: 'var(--color-primary)' }} />.
           </p>
         </div>
         <div className="faq-list" style={{ maxWidth: 780, margin: '0 auto' }}>

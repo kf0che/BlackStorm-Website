@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import ContactEmailLink from '../components/ui/ContactEmailLink'
 
 const categories = [
   {
@@ -263,9 +264,7 @@ export default function Support() {
                 Include your account email and describe the issue as specifically as you can —
                 what device, what happened, when.
               </p>
-              <a href="mailto:support@blackstorm.llc" className="btn btn-outline" style={{ marginTop: 16, display: 'inline-flex' }}>
-                support@blackstorm.llc
-              </a>
+              <ContactEmailLink className="btn btn-outline" style={{ marginTop: 16, display: 'inline-flex' }} />
             </div>
             <div className="card">
               <div className="card-header">
@@ -323,10 +322,9 @@ export default function Support() {
               <div>
                 <strong>Service not working?</strong>
                 <p style={{ marginTop: 4, marginBottom: 0 }}>
-                  Email{' '}
-                  <a href="mailto:support@blackstorm.llc" style={{ color: 'inherit', textDecoration: 'underline' }}>support@blackstorm.llc</a>{' '}
-                  with "URGENT" in the subject line. Describe what is not working and which devices
-                  are affected. Professional plan customers may also call their dedicated support line.
+                  Use the contact form or verified email once available. Describe what is not working
+                  and which devices are affected. Professional plan contact options will be provided
+                  directly after verified setup.
                 </p>
               </div>
             </div>

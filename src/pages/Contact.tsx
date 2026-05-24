@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
+import { businessContact, contactEmailHref, displayContactValue } from '../config/business'
 
 const contactCards = [
   {
@@ -9,39 +10,33 @@ const contactCards = [
         <polyline points="22,6 12,13 2,6"/>
       </svg>
     ),
-    title: 'General Inquiries',
-    desc: 'New customer questions, service information, and anything else.',
-    value: 'hello@blackstorm.llc',
-    href: 'mailto:hello@blackstorm.llc',
+    title: 'Email',
+    desc: 'Verified email will appear here after setup is complete.',
+    value: displayContactValue(businessContact.email),
+    href: contactEmailHref(),
   },
   {
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <circle cx="12" cy="12" r="3"/>
-        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
-        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-        <path d="M4.93 19.07a10 10 0 0 1 0-14.14"/>
-        <path d="M8.46 15.54a5 5 0 0 1 0-7.07"/>
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/>
       </svg>
     ),
-    title: 'Technical Support',
-    desc: 'Existing account issues, monitoring questions, and technical help.',
-    value: 'support@blackstorm.llc',
-    href: 'mailto:support@blackstorm.llc',
+    title: 'Phone',
+    desc: 'Verified public phone details will be added when available.',
+    value: displayContactValue(businessContact.phone),
+    href: undefined,
   },
   {
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-        <circle cx="9" cy="7" r="4"/>
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"/>
+        <circle cx="12" cy="10" r="3"/>
       </svg>
     ),
-    title: 'Partnerships & Investors',
-    desc: 'Business relationships, reseller opportunities, and investor discussions.',
-    value: 'business@blackstorm.llc',
-    href: 'mailto:business@blackstorm.llc',
+    title: 'Address',
+    desc: 'Verified mailing address will be added before public use.',
+    value: displayContactValue(businessContact.address),
+    href: undefined,
   },
 ]
 
@@ -183,9 +178,15 @@ export default function Contact() {
                     <div>
                       <h3 style={{ fontSize: '1rem', marginBottom: 4 }}>{card.title}</h3>
                       <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: 6 }}>{card.desc}</p>
-                      <a href={card.href} style={{ fontSize: '0.875rem', color: 'var(--color-primary)' }}>
-                        {card.value}
-                      </a>
+                      {card.href ? (
+                        <a href={card.href} style={{ fontSize: '0.875rem', color: 'var(--color-primary)' }}>
+                          {card.value}
+                        </a>
+                      ) : (
+                        <span style={{ fontSize: '0.875rem', color: 'var(--text-primary)' }}>
+                          {card.value}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>

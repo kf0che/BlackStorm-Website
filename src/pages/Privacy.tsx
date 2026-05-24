@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import ContactEmailLink from '../components/ui/ContactEmailLink'
 
 function PlainEnglish({ children }: { children: React.ReactNode }) {
   return (
@@ -130,9 +131,7 @@ export default function Privacy() {
         <p style={{ marginBottom: 0, marginTop: 16 }}>
           The full policy below explains all of this in detail. If you have questions,
           email us at{' '}
-          <a href="mailto:privacy@blackstorm.llc" style={{ color: 'var(--color-primary)' }}>
-            privacy@blackstorm.llc
-          </a>.
+          <ContactEmailLink style={{ color: 'var(--color-primary)' }} />.
         </p>
       </div>
 
@@ -308,9 +307,7 @@ export default function Privacy() {
       <p>
         You may request deletion of your account and associated data at any time by contacting
         us at{' '}
-        <a href="mailto:privacy@blackstorm.llc" style={{ color: 'var(--color-primary)' }}>
-          privacy@blackstorm.llc
-        </a>.
+        <ContactEmailLink style={{ color: 'var(--color-primary)' }} />.
         We will confirm receipt and complete the deletion within 30 days.
       </p>
 
@@ -384,9 +381,7 @@ export default function Privacy() {
       </ul>
       <p>
         To make any of these requests, contact us at{' '}
-        <a href="mailto:privacy@blackstorm.llc" style={{ color: 'var(--color-primary)' }}>
-          privacy@blackstorm.llc
-        </a>. We will respond within 30 days. We will never charge you for privacy requests.
+        <ContactEmailLink style={{ color: 'var(--color-primary)' }} />. We will respond within 30 days. We will never charge you for privacy requests.
       </p>
       <p>
         If you believe we have not handled your privacy request appropriately, you have the
@@ -403,9 +398,7 @@ export default function Privacy() {
         of age. We do not knowingly collect personal information from children. If you are a
         parent or guardian and believe your child has provided us with personal information
         without your consent, please contact us immediately at{' '}
-        <a href="mailto:privacy@blackstorm.llc" style={{ color: 'var(--color-primary)' }}>
-          privacy@blackstorm.llc
-        </a>{' '}
+        <ContactEmailLink style={{ color: 'var(--color-primary)' }} />{' '}
         and we will promptly delete that information.
       </p>
 
@@ -448,9 +441,7 @@ export default function Privacy() {
       <ul>
         <li>
           <strong>Privacy inquiries:</strong>{' '}
-          <a href="mailto:privacy@blackstorm.llc" style={{ color: 'var(--color-primary)' }}>
-            privacy@blackstorm.llc
-          </a>
+          <ContactEmailLink style={{ color: 'var(--color-primary)' }} />
         </li>
         <li>
           <strong>General contact:</strong>{' '}
@@ -458,9 +449,7 @@ export default function Privacy() {
         </li>
         <li>
           <strong>Support:</strong>{' '}
-          <a href="mailto:support@blackstorm.llc" style={{ color: 'var(--color-primary)' }}>
-            support@blackstorm.llc
-          </a>
+          <ContactEmailLink style={{ color: 'var(--color-primary)' }} />
         </li>
       </ul>
       <p>We will acknowledge privacy requests within 5 business days and resolve them within 30 days.</p>

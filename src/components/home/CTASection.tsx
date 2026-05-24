@@ -1,15 +1,16 @@
 import { Link } from 'react-router-dom'
+import ContactEmailLink from '../ui/ContactEmailLink'
 
 const supportChannels = [
   {
     title: 'Email Us Directly',
-    body: 'New customer questions, service inquiries, and general requests. We respond to all emails within one business day.',
-    cta: <a href="mailto:hello@blackstorm.llc" className="btn btn-outline">hello@blackstorm.llc</a>,
+    body: 'New customer questions, service inquiries, and general requests. Verified email contact will appear here once setup is complete.',
+    cta: <ContactEmailLink className="btn btn-outline" />,
   },
   {
     title: 'Technical Support',
-    body: 'Existing customers with account or monitoring questions can reach our support team directly.',
-    cta: <a href="mailto:support@blackstorm.llc" className="btn btn-outline">support@blackstorm.llc</a>,
+    body: 'Existing customers with account or monitoring questions can use the contact form while verified support email setup is pending.',
+    cta: <ContactEmailLink className="btn btn-outline" />,
   },
   {
     title: 'Contact Form',
