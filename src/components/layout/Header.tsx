@@ -86,58 +86,14 @@ export default function Header({ mobileOpen, onMobileToggle }: HeaderProps) {
             <li>
               <NavLink to="/" end>Home</NavLink>
             </li>
-            <li className="nav-dropdown">
-              <button
-                className="nav-dropdown-trigger"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Services
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <polyline points="6 9 12 15 18 9"/>
-                </svg>
-              </button>
-              <div className="nav-dropdown-menu">
-                <div className="nav-dropdown-label">Available Now</div>
-                <NavLink to="/services/network-monitoring">
-                  <svg className="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-                  </svg>
-                  Network Monitoring
-                </NavLink>
-                <hr style={{ border: 'none', borderTop: '1px solid var(--border-subtle)', margin: '4px 8px' }} />
-                <div className="nav-dropdown-label">Coming Soon</div>
-                <span className="nav-dropdown-item-disabled">
-                  <svg className="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                  </svg>
-                  Security Services
-                  <span className="badge badge-orange" style={{ marginLeft: 'auto', fontSize: '0.6rem' }}>Research</span>
-                </span>
-                <span className="nav-dropdown-item-disabled">
-                  <svg className="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
-                  </svg>
-                  Managed Connectivity
-                  <span className="badge badge-gray" style={{ marginLeft: 'auto', fontSize: '0.6rem' }}>Planning</span>
-                </span>
-                <hr style={{ border: 'none', borderTop: '1px solid var(--border-subtle)', margin: '4px 8px' }} />
-                <NavLink to="/services">
-                  <svg className="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-                  </svg>
-                  All Services
-                </NavLink>
-              </div>
-            </li>
-            <li><NavLink to="/pricing">Pricing</NavLink></li>
             <li><NavLink to="/about">About</NavLink></li>
-            <li><NavLink to="/investors">Investors</NavLink></li>
+            <li><NavLink to="/services">Services</NavLink></li>
+            <li><NavLink to="/values">Values</NavLink></li>
             <li><NavLink to="/contact">Contact</NavLink></li>
           </ul>
 
           <div className="nav-actions">
-            <NavLink to="/support" className="nav-support-link">Support</NavLink>
+            <NavLink to="/contact" className="nav-support-link">Request Help</NavLink>
             <button
               className="btn-theme"
               onClick={toggle}
@@ -146,7 +102,7 @@ export default function Header({ mobileOpen, onMobileToggle }: HeaderProps) {
             >
               {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
             </button>
-            <Link to="/contact" className="btn btn-primary btn-sm">Get Started</Link>
+            <Link to="/contact" className="btn btn-primary btn-sm">Contact BlackStorm</Link>
           </div>
 
           <button

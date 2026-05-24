@@ -24,11 +24,8 @@ export default function Footer() {
           <div className="footer-col">
             <h5>Company</h5>
             <ul>
-              <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/values">Our Values</Link></li>
-              <li><Link to="/why-us">Why BlackStorm</Link></li>
-              <li><Link to="/vision">Future Vision</Link></li>
-              <li><Link to="/investors">Investors</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/values">Values</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
@@ -36,16 +33,15 @@ export default function Footer() {
           <div className="footer-col">
             <h5>Services</h5>
             <ul>
-              <li><Link to="/services/network-monitoring">Network Monitoring</Link></li>
-              <li><Link to="/services">All Services</Link></li>
-              <li><Link to="/pricing">Pricing</Link></li>
+              <li><Link to="/services">Network Monitoring</Link></li>
+              <li><Link to="/contact">Request Help</Link></li>
+              <li><Link to="/contact">Contact BlackStorm</Link></li>
             </ul>
           </div>
 
           <div className="footer-col">
             <h5>Resources</h5>
             <ul>
-              <li><Link to="/support">Support & Knowledge Base</Link></li>
               <li><Link to="/privacy">Privacy Policy</Link></li>
               <li><Link to="/terms">Terms of Service</Link></li>
             </ul>
@@ -58,12 +54,12 @@ export default function Footer() {
           <p>&copy; 2025&ndash;2026 BlackStorm, LLC. All rights reserved.</p>
           <div className="footer-status">
             <span className="status-dot" aria-hidden="true" />
-            Service status by support request
+            Launch-ready public website
           </div>
           <div className="footer-bottom-links">
             <Link to="/privacy">Privacy</Link>
             <Link to="/terms">Terms</Link>
-            <Link to="/support">Support</Link>
+            <Link to="/contact">Contact</Link>
           </div>
         </div>
       </div>

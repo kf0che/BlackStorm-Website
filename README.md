@@ -2,12 +2,12 @@
 
 Static and React-ready website foundation for BlackStorm, LLC.
 
-The site focuses on customer-friendly network monitoring, support workflows, operational visibility, onboarding, privacy, terms, and future customer portal foundations without claiming certifications, compliance levels, or service guarantees that have not been earned.
+The launch site focuses on customer-friendly network monitoring, practical support, privacy, terms, and clear contact paths without claiming certifications, compliance levels, or service guarantees that have not been earned.
 
 ## Structure
 
 - `index.html` - Vite application entry point
-- `src/` - React pages, reusable UI components, dashboard foundations, monitoring, support, and education components
+- `src/` - React pages, layout components, launch content, and reusable UI foundations
 - `css/main.css` - static website stylesheet
 - `js/main.js` - static website behavior
 - `*.html` - current static website pages
@@ -32,5 +32,4 @@ npm run build
 
 - Placeholder links and integrations are marked with `[UPDATE: ...]`.
 - Legal documents should be reviewed by a qualified attorney before public launch.
-- Support, monitoring, and customer portal components are foundation pieces for future platform development.
-
+- Keep launch scope focused on the required public website pages.

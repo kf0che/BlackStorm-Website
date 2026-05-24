@@ -12,7 +12,7 @@ export default function NotFound() {
           </p>
           <div className="hero-ctas">
             <Link to="/" className="btn btn-primary btn-lg">Go Home</Link>
-            <Link to="/contact" className="btn btn-outline btn-lg">Contact Support</Link>
+            <Link to="/contact" className="btn btn-outline btn-lg">Request Help</Link>
           </div>
         </div>
       </div>

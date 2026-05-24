@@ -1,0 +1,39 @@
+import { useEffect } from 'react'
+
+interface SEOProps {
+  title: string
+  description: string
+}
+
+export default function SEO({ title, description }: SEOProps) {
+  useEffect(() => {
+    document.title = title
+
+    let meta = document.querySelector<HTMLMetaElement>('meta[name="description"]')
+    if (!meta) {
+      meta = document.createElement('meta')
+      meta.name = 'description'
+      document.head.appendChild(meta)
+    }
+    meta.content = description
+
+    let ogTitle = document.querySelector<HTMLMetaElement>('meta[property="og:title"]')
+    if (!ogTitle) {
+      ogTitle = document.createElement('meta')
+      ogTitle.setAttribute('property', 'og:title')
+      document.head.appendChild(ogTitle)
+    }
+    ogTitle.content = title
+
+    let ogDescription = document.querySelector<HTMLMetaElement>('meta[property="og:description"]')
+    if (!ogDescription) {
+      ogDescription = document.createElement('meta')
+      ogDescription.setAttribute('property', 'og:description')
+      document.head.appendChild(ogDescription)
+    }
+    ogDescription.content = description
+  }, [title, description])
+
+  return null
+}
+
