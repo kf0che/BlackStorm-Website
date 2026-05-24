@@ -1,7 +1,7 @@
 export const CONTACT_INFORMATION_PENDING = 'Contact information coming soon'
 
 export const businessContact = {
-  businessName: 'BlackStorm, LLC.',
+  businessName: 'BlackStorm, LLC',
   address: '',
   phone: '',
   email: '',
@@ -10,7 +10,7 @@ export const businessContact = {
 
 export const brandAssets = {
   logoSrc: '',
-  logoAlt: 'BlackStorm, LLC. logo',
+  logoAlt: 'BlackStorm, LLC logo',
 } as const
 
 export function displayContactValue(value: string) {

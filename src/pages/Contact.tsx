@@ -1,9 +1,9 @@
 import { useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
-import { businessContact, contactEmailHref, displayContactValue } from '../config/business'
+import { businessContact } from '../config/business'
 
 const contactCards = [
-  {
+  businessContact.email.trim() && {
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -11,22 +11,22 @@ const contactCards = [
       </svg>
     ),
     title: 'Email',
-    desc: 'Verified email will appear here after setup is complete.',
-    value: displayContactValue(businessContact.email),
-    href: contactEmailHref(),
+    desc: 'General inquiries, new customer questions, and anything else.',
+    value: businessContact.email,
+    href: `mailto:${businessContact.email}`,
   },
-  {
+  businessContact.phone.trim() && {
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/>
       </svg>
     ),
     title: 'Phone',
-    desc: 'Verified public phone details will be added when available.',
-    value: displayContactValue(businessContact.phone),
-    href: undefined,
+    desc: 'Available during business hours, Monday through Friday.',
+    value: businessContact.phone,
+    href: `tel:${businessContact.phone.replace(/\D/g, '').replace(/^/, '+')}`,
   },
-  {
+  businessContact.address.trim() && {
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"/>
@@ -34,11 +34,11 @@ const contactCards = [
       </svg>
     ),
     title: 'Address',
-    desc: 'Verified mailing address will be added before public use.',
-    value: displayContactValue(businessContact.address),
+    desc: 'Mailing address for BlackStorm, LLC.',
+    value: businessContact.address,
     href: undefined,
   },
-]
+].filter(Boolean) as Array<{ icon: JSX.Element; title: string; desc: string; value: string; href: string | undefined }>
 
 const responseTimes = [
   { label: 'New inquiries', time: '1 business day' },

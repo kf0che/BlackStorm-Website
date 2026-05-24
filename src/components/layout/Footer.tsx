@@ -54,7 +54,7 @@ export default function Footer() {
 
       <div className="footer-bottom">
         <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
-          <p>&copy; 2025&ndash;2026 {businessContact.businessName} All rights reserved.</p>
+          <p>&copy; 2025&ndash;2026 {businessContact.businessName}. All rights reserved.</p>
           <div className="footer-status">
             <span className="status-dot" aria-hidden="true" />
             Service status by support request
