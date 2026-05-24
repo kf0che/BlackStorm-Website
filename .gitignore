@@ -1,0 +1,92 @@
+# Build output
+dist/
+dist-ssr/
+
+# Dependencies
+node_modules/
+
+# Environment variables — never commit secrets
+.env
+.env.*
+!.env.example
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Editor directories
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Vite local overrides
+*.local
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Old static site assets (superseded by React/Vite build)
+css/
+js/
+
+# Old static site pages (superseded by React build)
+about.html
+business-portal.html
+contact.html
+customer-portal.html
+investor.html
+network-monitoring.html
+pricing.html
+privacy.html
+security.html
+services.html
+support.html
+terms.html
+
+# Internal planning documentation (not public-facing source)
+CUSTOMER_PORTAL.md
+DESIGN_SYSTEM.md
+EDUCATION_ONBOARDING.md
+MONITORING_VISIBILITY.md
+SUPPORT_TICKETING.md
+about-us.md
+accessibility-and-usability.md
+alerting-and-notifications.md
+contact.md
+customer-communication.md
+customer-learning.md
+customer-portal-overview.md
+dashboard-vision.md
+educational-philosophy.md
+escalation-process.md
+future-vision.md
+guided-setup.md
+incident-visibility.md
+knowledge-base.md
+monitoring-philosophy.md
+monitoring-visibility.md
+onboarding-overview.md
+operational-visibility.md
+our-values.md
+permissions-and-roles.md
+priority-levels.md
+privacy-policy.md
+reporting-and-history.md
+services.md
+support-philosophy.md
+support-workflows.md
+technical-support.md
+terms-of-service.md
+ticketing-workflow.md
+why-blackstorm.md

@@ -1,0 +1,1457 @@
+/*
+  BlackStorm frontend foundation
+
+  Intended UX behavior:
+  - Create calm, reusable layout primitives for marketing pages, support flows,
+    customer portals, and future operational dashboards.
+  - Prefer readable density: enough information to scan, never so much that the
+    interface feels noisy.
+
+  Accessibility goals:
+  - Keyboard focus is always visible.
+  - Layout utilities do not reorder content in a way that changes reading order.
+  - Color is never the only state signal; status components should include text labels.
+
+  Trust-building design choices:
+  - Cards use restrained borders and subtle backgrounds.
+  - Dashboard surfaces look operational and honest, not like fake product screenshots.
+  - Placeholder styling is explicit so unfinished integrations are not mistaken for live features.
+
+  Future scalability goals:
+  - These class names are portable to React Native token names and future mobile app surfaces.
+  - Dashboard shell classes can wrap customer portals, MSP views, education systems,
+    and monitoring platform pages without changing the core page layout.
+*/
+
+:root {
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --content-narrow: 720px;
+  --content-default: 1200px;
+  --content-wide: 1440px;
+}
+
+.bs-shell {
+  min-height: 100%;
+  background: var(--bg-base);
+  color: var(--text-primary);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.bs-container {
+  width: min(100% - 32px, var(--content-default));
+  margin-inline: auto;
+}
+
+.bs-container-narrow {
+  width: min(100% - 32px, var(--content-narrow));
+  margin-inline: auto;
+}
+
+.bs-container-wide {
+  width: min(100% - 32px, var(--content-wide));
+  margin-inline: auto;
+}
+
+.bs-section {
+  padding-block: clamp(4rem, 7vw, 6rem);
+}
+
+.bs-section-compact {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+.bs-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-gap, var(--space-4));
+}
+
+.bs-cluster {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--cluster-gap, var(--space-3));
+}
+
+.bs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min, 260px)), 1fr));
+  gap: var(--grid-gap, var(--space-6));
+}
+
+.bs-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.bs-eyebrow {
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.bs-heading {
+  margin: 0;
+  color: var(--text-primary);
+  line-height: 1.15;
+}
+
+.bs-prose {
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.bs-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.bs-card-interactive {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.bs-card-interactive:hover,
+.bs-card-interactive:focus-within {
+  border-color: var(--border-default);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.bs-button-row {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.bs-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.bs-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.bs-form-help,
+.bs-form-error {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.bs-form-help {
+  color: var(--text-muted);
+}
+
+.bs-form-error {
+  color: var(--color-error);
+}
+
+.bs-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.bs-table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  background: var(--bg-card);
+}
+
+.bs-dashboard-shell {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  min-height: calc(100vh - var(--nav-height, 72px));
+  background: var(--bg-base);
+}
+
+.bs-dashboard-sidebar {
+  border-right: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  padding: var(--space-6);
+}
+
+.bs-dashboard-main {
+  min-width: 0;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.bs-dashboard-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.bs-dashboard-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+/*
+  Customer portal component styles
+
+  UX purpose:
+  - Keep portal widgets compact, readable, and calm.
+  - Support operational clarity without dense command-center visuals.
+
+  Accessibility:
+  - Status dot is paired with visible text.
+  - Native selects/forms keep keyboard and mobile behavior predictable.
+
+  Scaling:
+  - These classes can support future API data, RBAC-filtered navigation, and
+    customer self-service workflows.
+*/
+
+.portal-top-nav {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.portal-top-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.portal-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.portal-sidebar-heading {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-3);
+  text-transform: uppercase;
+}
+
+.portal-sidebar-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 0.75rem 0.875rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.portal-sidebar-link:hover,
+.portal-sidebar-link:focus-visible,
+.portal-sidebar-link.active {
+  background: var(--color-primary-dim);
+  border-color: var(--border-default);
+  color: var(--text-primary);
+}
+
+.portal-sidebar-link small {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+}
+
+.portal-site-selector {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: min(100%, 260px);
+}
+
+.portal-site-selector span {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.portal-status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.portal-status small {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.portal-status-dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: var(--radius-full);
+  background: var(--text-muted);
+}
+
+.portal-status-online .portal-status-dot { background: var(--color-success); }
+.portal-status-review .portal-status-dot { background: var(--color-warning); }
+.portal-status-offline .portal-status-dot { background: var(--color-error); }
+.portal-status-paused .portal-status-dot { background: var(--text-muted); }
+.portal-status-unknown .portal-status-dot { background: var(--border-emphasis); }
+
+.portal-device-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+.portal-device-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.portal-device-card h3 {
+  font-size: 1rem;
+  margin: 0 0 var(--space-1);
+}
+
+.portal-device-card p {
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.portal-meta-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.portal-meta-list div {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+}
+
+.portal-meta-list dt {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.portal-meta-list dd {
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  margin: var(--space-1) 0 0;
+}
+
+.portal-ticket-list,
+.portal-notification-center ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.portal-ticket-item,
+.portal-notification-center li {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.portal-ticket-item strong,
+.portal-notification-center strong {
+  color: var(--text-primary);
+  display: block;
+}
+
+.portal-ticket-item span,
+.portal-notification-center small {
+  color: var(--text-muted);
+  display: block;
+  font-size: 0.78rem;
+  margin-top: var(--space-1);
+}
+
+.portal-ticket-item p,
+.portal-notification-center p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin: var(--space-2) 0 0;
+}
+
+.portal-notification-center {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.portal-notification-center h2 {
+  font-size: 1.15rem;
+  margin-bottom: var(--space-4);
+}
+
+.portal-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/*
+  Onboarding and education system styles
+
+  UX purpose:
+  - Keep learning calm, modular, and task-adjacent.
+  - Avoid overwhelming users with long technical explanations before they ask.
+
+  Accessibility:
+  - Progress uses ordered lists and text statuses.
+  - Help controls are keyboard reachable.
+  - Overlay content uses dialog semantics at the component level.
+
+  Progressive disclosure:
+  - Tooltips are small.
+  - Help panels are medium-depth.
+  - Article layouts and modules hold deeper learning.
+
+  Mobile:
+  - Wizard, article, and module layouts collapse to a single column.
+*/
+
+.education-wizard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.education-wizard-header {
+  margin-bottom: var(--space-6);
+}
+
+.education-wizard-body {
+  margin-top: var(--space-6);
+}
+
+.education-wizard-actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.education-progress ol {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.education-progress-step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+}
+
+.education-progress-step.is-current {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-dim);
+}
+
+.education-progress-number {
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-full);
+  color: var(--color-primary);
+  display: inline-flex;
+  font-size: 0.8rem;
+  font-weight: 800;
+  height: 2rem;
+  justify-content: center;
+  width: 2rem;
+}
+
+.education-progress-step strong,
+.education-checklist strong {
+  color: var(--text-primary);
+  display: block;
+  font-size: 0.9rem;
+}
+
+.education-progress-step small,
+.education-checklist small {
+  color: var(--text-muted);
+  display: block;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  margin-top: var(--space-1);
+}
+
+.education-checklist {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.education-checklist h2 {
+  font-size: 1.15rem;
+  margin-bottom: var(--space-4);
+}
+
+.education-checklist ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.education-checklist label {
+  align-items: flex-start;
+  display: flex;
+  gap: var(--space-3);
+}
+
+.education-checklist input {
+  margin-top: 0.2rem;
+}
+
+.education-tooltip {
+  display: inline-flex;
+  position: relative;
+}
+
+.education-tooltip button {
+  align-items: center;
+  background: var(--color-primary-dim);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-full);
+  color: var(--color-primary);
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 800;
+  height: 1.35rem;
+  justify-content: center;
+  width: 1.35rem;
+}
+
+.education-tooltip-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  left: 50%;
+  line-height: 1.55;
+  max-width: min(280px, calc(100vw - 32px));
+  opacity: 0;
+  padding: var(--space-3);
+  pointer-events: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  transform: translateX(-50%) translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  visibility: hidden;
+  width: max-content;
+  z-index: 20;
+}
+
+.education-tooltip:hover .education-tooltip-content,
+.education-tooltip:focus-within .education-tooltip-content {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  visibility: visible;
+}
+
+.education-overlay {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: var(--space-4);
+  position: fixed;
+  z-index: 2000;
+}
+
+.education-overlay-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  max-width: 520px;
+  padding: var(--space-6);
+}
+
+.education-overlay-card h2 {
+  margin-bottom: var(--space-3);
+}
+
+.education-card,
+.education-module,
+.education-help-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.education-card h3,
+.education-module h3,
+.education-help-panel h2 {
+  font-size: 1.05rem;
+  margin-bottom: var(--space-2);
+}
+
+.education-card p,
+.education-module p,
+.education-help-panel p {
+  font-size: 0.9rem;
+}
+
+.education-asset-placeholder {
+  align-items: center;
+  background: var(--bg-elevated);
+  border: 1px dashed var(--border-emphasis);
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  display: flex;
+  font-size: 0.78rem;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-4);
+  min-height: 120px;
+  padding: var(--space-4);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.education-module-meta {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-3);
+}
+
+.education-module-meta span {
+  background: var(--color-primary-dim);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-full);
+  color: var(--color-primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+}
+
+.education-help-panel {
+  background: var(--bg-elevated);
+}
+
+.education-help-action {
+  margin-top: var(--space-4);
+}
+
+.education-article {
+  width: min(100% - 32px, var(--content-default));
+  margin-inline: auto;
+  padding-block: clamp(3rem, 6vw, 5rem);
+}
+
+.education-article-header {
+  max-width: var(--content-narrow);
+  margin-bottom: var(--space-8);
+}
+
+.education-article-header h1 {
+  margin: var(--space-2) 0 var(--space-3);
+}
+
+.education-article-header small {
+  color: var(--text-muted);
+}
+
+.education-article-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.35fr);
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.education-article-body {
+  max-width: var(--content-narrow);
+}
+
+.education-article-body h2,
+.education-article-body h3 {
+  margin-top: var(--space-8);
+}
+
+.education-article-aside {
+  position: sticky;
+  top: calc(var(--nav-height, 72px) + var(--space-4));
+}
+
+/*
+  Operational monitoring and visibility styles
+
+  Operational clarity:
+  - Widgets use restrained spacing, visible labels, and compact summaries.
+  - Status cards distinguish health, maintenance, and incidents without creating a
+    visually noisy mission-control wall.
+
+  Alert fatigue reduction:
+  - Alert banners are calm and grouped.
+  - Historical trend cards provide context before escalation.
+
+  Accessibility:
+  - Status colors are paired with text in the React components.
+  - Placeholder chart areas use role="img" labels supplied by components.
+
+  Mobile/tablet usability:
+  - Monitoring grids collapse naturally and preserve reading order.
+  - Timelines remain readable on narrow screens without horizontal scrolling.
+
+  Future scalability:
+  - These classes can support Prometheus/Grafana embeds, customer-specific
+    monitoring, incident workflows, notification systems, and AI-assisted summaries.
+*/
+
+.monitoring-health-card,
+.monitoring-overview-widget,
+.monitoring-notification-panel,
+.monitoring-incident-timeline,
+.monitoring-maintenance,
+.monitoring-reporting-layout,
+.monitoring-trend-card,
+.monitoring-ai-placeholder {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.monitoring-health-card header,
+.monitoring-alert-banner,
+.monitoring-maintenance header,
+.monitoring-service-status,
+.monitoring-trend-card header,
+.monitoring-reporting-header {
+  align-items: flex-start;
+  display: flex;
+  gap: var(--space-4);
+  justify-content: space-between;
+}
+
+.monitoring-health-card h3,
+.monitoring-overview-widget h3,
+.monitoring-maintenance h3,
+.monitoring-trend-card h3,
+.monitoring-ai-placeholder h3 {
+  font-size: 1.05rem;
+  margin: var(--space-1) 0 var(--space-2);
+}
+
+.monitoring-health-card p,
+.monitoring-overview-widget p,
+.monitoring-alert-message,
+.monitoring-notification-panel p,
+.monitoring-incident-timeline p,
+.monitoring-trend-card p,
+.monitoring-ai-placeholder p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.monitoring-health-card small,
+.monitoring-service-status small,
+.monitoring-notification-meta,
+.monitoring-trend-card span {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.monitoring-status-label,
+.monitoring-service-status > div:first-child {
+  align-items: center;
+  display: inline-flex;
+  gap: var(--space-2);
+}
+
+.monitoring-status-label {
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.monitoring-status-label span,
+.monitoring-status-dot {
+  background: var(--text-muted);
+  border-radius: var(--radius-full);
+  display: inline-block;
+  height: 0.6rem;
+  width: 0.6rem;
+}
+
+.monitoring-tone-healthy .monitoring-status-label span,
+.monitoring-service-operational .monitoring-status-dot {
+  background: var(--color-success);
+}
+
+.monitoring-tone-review .monitoring-status-label span,
+.monitoring-service-degraded .monitoring-status-dot {
+  background: var(--color-warning);
+}
+
+.monitoring-tone-incident .monitoring-status-label span,
+.monitoring-service-unavailable .monitoring-status-dot {
+  background: var(--color-error);
+}
+
+.monitoring-tone-maintenance .monitoring-status-label span,
+.monitoring-service-maintenance .monitoring-status-dot {
+  background: var(--color-primary);
+}
+
+.monitoring-large-metric,
+.monitoring-overview-widget strong,
+.monitoring-trend-card > strong {
+  color: var(--text-primary);
+  display: block;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  line-height: 1.1;
+  margin: var(--space-4) 0 var(--space-2);
+}
+
+.monitoring-overview-widget {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.monitoring-chart-placeholder {
+  align-items: center;
+  background: var(--bg-elevated);
+  border: 1px dashed var(--border-emphasis);
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  display: flex;
+  font-size: 0.78rem;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: 0.06em;
+  min-height: 160px;
+  padding: var(--space-4);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.monitoring-chart-small {
+  min-height: 96px;
+  margin-top: var(--space-4);
+}
+
+.monitoring-alert-banner {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+.monitoring-alert-info {
+  background: var(--bg-card);
+}
+
+.monitoring-alert-review {
+  background: var(--color-primary-dim);
+  border-color: var(--border-default);
+}
+
+.monitoring-alert-important,
+.monitoring-alert-critical {
+  background: color-mix(in srgb, var(--color-warning) 12%, var(--bg-card));
+  border-color: color-mix(in srgb, var(--color-warning) 45%, var(--border-subtle));
+}
+
+.monitoring-alert-critical {
+  background: color-mix(in srgb, var(--color-error) 10%, var(--bg-card));
+  border-color: color-mix(in srgb, var(--color-error) 40%, var(--border-subtle));
+}
+
+.monitoring-alert-banner strong,
+.monitoring-notification-panel strong,
+.monitoring-service-status strong,
+.monitoring-incident-timeline h3 {
+  color: var(--text-primary);
+}
+
+.monitoring-alert-action {
+  flex: 0 0 auto;
+}
+
+.monitoring-notification-panel h2,
+.monitoring-incident-timeline h2 {
+  font-size: 1.15rem;
+  margin-bottom: var(--space-4);
+}
+
+.monitoring-notification-panel ul,
+.monitoring-incident-timeline ol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.monitoring-notification-panel li {
+  align-items: flex-start;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  display: flex;
+  gap: var(--space-4);
+  justify-content: space-between;
+  padding: var(--space-4);
+}
+
+.monitoring-notification-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  text-align: right;
+}
+
+.monitoring-notification-meta span {
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+.monitoring-incident-event {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.22fr) minmax(0, 1fr);
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.monitoring-incident-event time {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.monitoring-incident-event span {
+  color: var(--color-primary);
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-1);
+  text-transform: uppercase;
+}
+
+.monitoring-incident-event h3 {
+  font-size: 0.98rem;
+  margin-bottom: var(--space-2);
+}
+
+.monitoring-maintenance dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-4) 0 0;
+}
+
+.monitoring-maintenance dl div {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+}
+
+.monitoring-maintenance dt {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.monitoring-maintenance dd {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  margin: var(--space-1) 0 0;
+}
+
+.monitoring-service-status {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.monitoring-service-status > div:last-child {
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  text-align: right;
+}
+
+.monitoring-service-status > div:last-child > span {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.monitoring-reporting-layout {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.monitoring-reporting-header h1 {
+  margin: var(--space-1) 0 var(--space-2);
+}
+
+.monitoring-reporting-header p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: var(--content-narrow);
+}
+
+.monitoring-reporting-filters {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: flex-end;
+}
+
+.monitoring-reporting-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: var(--space-4);
+}
+
+.monitoring-reporting-body {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.monitoring-trend-card {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.monitoring-ai-placeholder {
+  background: var(--bg-elevated);
+  border-style: dashed;
+}
+
+/*
+  Support and ticketing foundation styles
+
+  UX and trust goals:
+  - Support surfaces should feel calm, clear, and accountable.
+  - Priority visuals help sorting without implying future SLA promises.
+  - Forms ask for practical impact and avoid collecting sensitive secrets.
+
+  Accessibility:
+  - Native inputs/selects preserve keyboard and mobile behavior.
+  - Timelines use ordered lists and visible timestamps.
+  - Badges use text labels instead of color-only meaning.
+
+  Dark/light mode:
+  - All colors route through existing theme tokens.
+*/
+
+.support-ticket-form,
+.support-ticket-card,
+.support-update-timeline,
+.support-maintenance-card,
+.support-kb-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.support-ticket-form {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.support-form-actions {
+  align-items: center;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  gap: var(--space-4);
+  justify-content: space-between;
+  padding-top: var(--space-5);
+}
+
+.support-form-actions p {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.support-priority {
+  align-items: center;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.65rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.support-priority-low {
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+}
+
+.support-priority-normal {
+  background: var(--color-primary-dim);
+  border-color: var(--border-default);
+  color: var(--color-primary);
+}
+
+.support-priority-high {
+  background: color-mix(in srgb, var(--color-warning) 12%, var(--bg-card));
+  border-color: color-mix(in srgb, var(--color-warning) 45%, var(--border-subtle));
+  color: var(--text-primary);
+}
+
+.support-priority-urgent {
+  background: color-mix(in srgb, var(--color-error) 10%, var(--bg-card));
+  border-color: color-mix(in srgb, var(--color-error) 40%, var(--border-subtle));
+  color: var(--text-primary);
+}
+
+.support-ticket-card header,
+.support-maintenance-card header {
+  align-items: flex-start;
+  display: flex;
+  gap: var(--space-4);
+  justify-content: space-between;
+}
+
+.support-ticket-card h3,
+.support-maintenance-card h3,
+.support-kb-panel h2,
+.support-update-timeline h2 {
+  font-size: 1.08rem;
+  margin: var(--space-1) 0 var(--space-4);
+}
+
+.support-ticket-card dl,
+.support-maintenance-card dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  gap: var(--space-3);
+  margin: var(--space-4) 0;
+}
+
+.support-ticket-card dl div,
+.support-maintenance-card dl div {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+}
+
+.support-ticket-card dt,
+.support-maintenance-card dt {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.support-ticket-card dd,
+.support-maintenance-card dd {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  margin: var(--space-1) 0 0;
+  text-transform: capitalize;
+}
+
+.support-ticket-card p,
+.support-maintenance-card p,
+.support-kb-panel p,
+.support-update-timeline p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.support-update-timeline ol,
+.support-kb-panel ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.support-update-timeline li {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: minmax(120px, 0.22fr) minmax(0, 1fr);
+  padding: var(--space-4);
+}
+
+.support-update-timeline time,
+.support-update-timeline small,
+.support-kb-panel small {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.support-update-timeline h3 {
+  color: var(--text-primary);
+  font-size: 0.98rem;
+  margin-bottom: var(--space-2);
+}
+
+.support-kb-panel {
+  background: var(--bg-elevated);
+}
+
+.support-kb-panel li {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.support-kb-panel a,
+.support-kb-panel strong {
+  color: var(--text-primary);
+  display: inline-block;
+  font-weight: 800;
+  margin-bottom: var(--space-2);
+}
+
+.support-kb-panel a:hover,
+.support-kb-panel a:focus-visible {
+  color: var(--color-primary);
+}
+
+@media (max-width: 900px) {
+  .bs-split,
+  .bs-dashboard-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .bs-dashboard-sidebar {
+    border-right: 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .portal-top-nav {
+    flex-direction: column;
+  }
+
+  .portal-top-actions {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .education-article-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .education-article-aside {
+    position: static;
+  }
+
+  .monitoring-reporting-header {
+    flex-direction: column;
+  }
+
+  .monitoring-reporting-filters {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .bs-container,
+  .bs-container-narrow,
+  .bs-container-wide {
+    width: min(100% - 24px, var(--content-default));
+  }
+
+  .bs-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bs-button-row .btn,
+  .bs-button-row .bs-btn {
+    width: 100%;
+  }
+
+  .portal-device-card-header,
+  .portal-ticket-item,
+  .portal-notification-center li {
+    flex-direction: column;
+  }
+
+  .portal-meta-list {
+    grid-template-columns: 1fr;
+  }
+
+  .portal-site-selector,
+  .portal-top-actions .btn {
+    width: 100%;
+  }
+
+  .education-wizard-actions {
+    justify-content: stretch;
+  }
+
+  .education-wizard-actions .btn,
+  .education-wizard-actions button {
+    width: 100%;
+  }
+
+  .education-tooltip-content {
+    left: auto;
+    right: 0;
+    transform: translateY(-4px);
+  }
+
+  .education-tooltip:hover .education-tooltip-content,
+  .education-tooltip:focus-within .education-tooltip-content {
+    transform: translateY(0);
+  }
+
+  .monitoring-health-card header,
+  .monitoring-alert-banner,
+  .monitoring-maintenance header,
+  .monitoring-service-status,
+  .monitoring-trend-card header,
+  .monitoring-notification-panel li {
+    flex-direction: column;
+  }
+
+  .monitoring-alert-action,
+  .monitoring-alert-action .btn,
+  .monitoring-alert-action button {
+    width: 100%;
+  }
+
+  .monitoring-notification-meta,
+  .monitoring-service-status > div:last-child {
+    text-align: left;
+  }
+
+  .monitoring-incident-event {
+    grid-template-columns: 1fr;
+  }
+
+  .monitoring-maintenance dl {
+    grid-template-columns: 1fr;
+  }
+
+  .support-form-actions,
+  .support-ticket-card header,
+  .support-maintenance-card header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .support-form-actions .btn,
+  .support-form-actions button {
+    width: 100%;
+  }
+
+  .support-update-timeline li {
+    grid-template-columns: 1fr;
+  }
+}
