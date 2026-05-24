@@ -55,8 +55,14 @@ const responseTimes = [
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
+    const form = e.currentTarget as HTMLFormElement
+    await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form) as unknown as Record<string, string>).toString(),
+    })
     setSubmitted(true)
   }
 
@@ -96,7 +102,8 @@ export default function Contact() {
               ) : (
                 <>
                   <h2 style={{ marginBottom: 24, fontSize: '1.4rem' }}>Send Us a Message</h2>
-                  <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+                  <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+                    <input type="hidden" name="form-name" value="contact" />
                     <div className="form-grid">
                       <div className="form-group">
                         <label className="form-label" htmlFor="firstName">First Name</label>

@@ -12,6 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   </head>
   <body>
+    <!-- Netlify form detection (do not remove) -->
+    <form name="contact" data-netlify="true" hidden>
+      <input name="firstName" /><input name="lastName" />
+      <input name="email" /><input name="company" />
+      <select name="subject"></select><textarea name="message"></textarea>
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
