@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security &amp; Compliance — BlackStorm, LLC</title>
+  <meta name="description" content="BlackStorm's security-focused approach: compliance-aware operations, NIST Framework alignment, CISA guidance, and audit-ready infrastructure visibility.">
+  <meta property="og:title" content="Security &amp; Compliance — BlackStorm, LLC">
+  <meta property="og:description" content="Compliance-aware, security-focused technology services aligned with NIST and CISA guidance.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<svg style="width:0;height:0;position:absolute;overflow:hidden" aria-hidden="true">
+  <defs>
+    <linearGradient id="bsLogoGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4F8EF7"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="nav-brand" aria-label="BlackStorm, LLC — Home">
+        <div class="nav-logo"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true"><rect width="36" height="36" rx="8" fill="url(#bsLogoGrad)"/><path d="M22 4L12 21h6L15 32 27 15h-6.5L22 4z" fill="white"/></svg></div>
+        <div><div class="nav-brand-text">BlackStorm</div><div class="nav-brand-sub">LLC</div></div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Services <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <div class="nav-dropdown-menu">
+            <div class="nav-dropdown-label">Core Services</div>
+            <a href="network-monitoring.html"><svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Network Monitoring</a>
+            <a href="security.html"><svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Security &amp; Compliance</a>
+            <div class="nav-dropdown-label">Portals</div>
+            <a href="customer-portal.html"><svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Customer Portal</a>
+            <a href="business-portal.html"><svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Business / MSP Portal</a>
+            <hr style="border:none;border-top:1px solid var(--border-subtle);margin:4px 8px"/>
+            <a href="services.html"><svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>All Services</a>
+          </div>
+        </li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="investor.html">Investors</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="support.html" class="nav-support-link">Support</a>
+        <button class="btn-theme" id="themeToggle" aria-label="Toggle theme" title="Toggle theme"></button>
+        <a href="contact.html" class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"></button>
+    </nav>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <div class="mobile-menu-section-label">Navigation</div>
+  <a href="index.html" class="mobile-menu-link">Home</a>
+  <a href="about.html" class="mobile-menu-link">About Us</a>
+  <hr class="mobile-menu-divider"/>
+  <div class="mobile-menu-section-label">Services</div>
+  <a href="services.html" class="mobile-menu-link">All Services</a>
+  <a href="network-monitoring.html" class="mobile-menu-link">Network Monitoring</a>
+  <a href="security.html" class="mobile-menu-link">Security &amp; Compliance</a>
+  <a href="customer-portal.html" class="mobile-menu-link">Customer Portal</a>
+  <a href="business-portal.html" class="mobile-menu-link">Business / MSP Portal</a>
+  <hr class="mobile-menu-divider"/>
+  <div class="mobile-menu-section-label">Company</div>
+  <a href="pricing.html" class="mobile-menu-link">Pricing</a>
+  <a href="investor.html" class="mobile-menu-link">Investors</a>
+  <a href="contact.html" class="mobile-menu-link">Contact</a>
+  <a href="support.html" class="mobile-menu-link">Support / KB</a>
+  <hr class="mobile-menu-divider"/>
+  <a href="contact.html" class="btn btn-primary btn-full" style="margin-top:8px">Get Started</a>
+</nav>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container text-center">
+      <span class="section-label">Security &amp; Compliance</span>
+      <h1 class="animate-fade-up"><span class="gradient-text">Security-Focused.</span><br>Compliance-Aware.</h1>
+      <p class="lead animate-fade-up delay-1" style="max-width:640px;margin:20px auto 0">BlackStorm operates with security as a foundational principle — not an afterthought. Our processes, systems, and services are designed with NIST Framework guidance and CISA best practices in mind.</p>
+    </div>
+  </section>
+
+  <!-- Important disclaimer -->
+  <section class="section-sm">
+    <div class="container" style="max-width:800px">
+      <div class="alert alert-blue">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div>
+          <strong>Compliance Transparency Notice:</strong> BlackStorm, LLC is a compliance-aware technology services company. We do not claim regulatory certifications (such as SOC 2, HIPAA, or PCI-DSS) on behalf of clients and do not act as a compliance auditor. Our services are designed with industry best practices in mind to support clients in building a stronger security and operational posture.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Security Approach -->
+  <section class="section">
+    <div class="container">
+      <div class="split-section">
+        <div class="split-content">
+          <span class="section-label">Our Approach</span>
+          <h2>Security Is Built In, Not Bolted On</h2>
+          <p>Every BlackStorm service — from monitoring configuration to data handling to portal access controls — is designed with security considerations from the ground up. We don't add security features after the fact; we start every design decision by asking: how do we do this safely?</p>
+          <p>This matters because your infrastructure data is sensitive. Your client environments are sensitive. The visibility BlackStorm provides into your network must itself be protected, controlled, and auditable.</p>
+          <ul class="check-list" style="margin-top:20px">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Access controls enforced at every portal layer</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Data handled with privacy and confidentiality by default</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Separation of client environments in multi-tenant contexts</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Operational logging and audit trails for visibility</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Encrypted connections for all data in transit</li>
+          </ul>
+        </div>
+        <div class="split-visual">
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div style="padding:24px;background:var(--bg-elevated);border:1px solid var(--color-accent);border-radius:var(--radius-lg)">
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+                <div class="card-icon accent" style="width:40px;height:40px;flex-shrink:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <strong>Security-First Design Philosophy</strong>
+              </div>
+              <p style="font-size:0.875rem">We evaluate security implications before finalizing any architectural or operational decision. If something can't be done securely, we don't ship it.</p>
+            </div>
+            <div style="padding:24px;background:var(--bg-elevated);border:1px solid var(--border-default);border-radius:var(--radius-lg)">
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+                <div class="card-icon" style="width:40px;height:40px;flex-shrink:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+                <strong>Least Privilege Access</strong>
+              </div>
+              <p style="font-size:0.875rem">Users and systems receive only the minimum permissions required to perform their function. No over-permissioning by default.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NIST Framework -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Framework Alignment</span>
+        <h2>Designed with the NIST Cybersecurity Framework in Mind</h2>
+        <p>The NIST Cybersecurity Framework is the industry-standard model for understanding, managing, and reducing cybersecurity risk. BlackStorm's service design maps to each of its five core functions.</p>
+      </div>
+      <div class="grid-3" style="gap:20px;margin-bottom:24px">
+        <div class="card">
+          <div class="card-icon" style="margin-bottom:16px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h3>Identify</h3>
+          <p>We help clients understand what assets exist in their environment and which are critical — a foundational step for any security posture. Our monitoring onboarding includes environment mapping and device inventory.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon accent" style="margin-bottom:16px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Protect</h3>
+          <p>Our services, portals, and infrastructure are designed with protective controls from day one — access management, data handling policies, and encryption are standard, not optional.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon secondary" style="margin-bottom:16px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>Detect</h3>
+          <p>This is the core of what BlackStorm does. Continuous monitoring, anomaly alerting, and threshold-based notifications give clients the detection capability that makes response possible.</p>
+        </div>
+      </div>
+      <div class="grid-2" style="gap:20px;max-width:700px;margin:0 auto">
+        <div class="card">
+          <div class="card-icon success" style="margin-bottom:16px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Respond</h3>
+          <p>Alerts are designed to give responders the information they need — what failed, when, and for how long. Our incident history, recovery notifications, and escalation workflows support faster response.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="margin-bottom:16px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"/><path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"/></svg>
+          </div>
+          <h3>Recover</h3>
+          <p>Historical monitoring data provides a baseline for recovery efforts and post-incident analysis. Understanding what normal looks like makes restoring normal faster and more defensible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CISA Alignment -->
+  <section class="section">
+    <div class="container">
+      <div class="split-section reverse">
+        <div class="split-content">
+          <span class="section-label">CISA Guidance</span>
+          <h2>Informed by Federal Cybersecurity Best Practices</h2>
+          <p>CISA (Cybersecurity and Infrastructure Security Agency) is the US federal authority on cybersecurity guidance for critical infrastructure and commercial organizations. BlackStorm uses public CISA guidance as a reference point for security-aware operations.</p>
+          <p>When CISA publishes an advisory about a widespread threat or newly discovered vulnerability, that guidance can help inform monitoring conversations and infrastructure posture recommendations when relevant to a client environment.</p>
+          <ul class="check-list" style="margin-top:20px">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Awareness of CISA Known Exploited Vulnerabilities (KEV)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>CISA advisory awareness for relevant client conversations</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Alignment with CISA's Secure by Design principles</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Infrastructure practices consistent with CISA hardening guidance</li>
+          </ul>
+        </div>
+        <div class="split-visual">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="padding:20px;background:var(--bg-elevated);border:1px solid var(--border-subtle);border-radius:var(--radius-md)">
+              <h4 style="margin-bottom:8px;font-size:0.9rem">CISA Secure by Design</h4>
+              <p style="font-size:0.85rem">Technology products should be secure out of the box. BlackStorm's portals and monitoring tools are built with this principle as a standard expectation, not a premium feature.</p>
+            </div>
+            <div style="padding:20px;background:var(--bg-elevated);border:1px solid var(--border-subtle);border-radius:var(--radius-md)">
+              <h4 style="margin-bottom:8px;font-size:0.9rem">Known Exploited Vulnerabilities</h4>
+              <p style="font-size:0.85rem">CISA's KEV catalog helps inform conversations about actively exploited vulnerabilities that may be relevant to commonly monitored devices.</p>
+            </div>
+            <div style="padding:20px;background:var(--bg-elevated);border:1px solid var(--border-subtle);border-radius:var(--radius-md)">
+              <h4 style="margin-bottom:8px;font-size:0.9rem">Zero Trust Awareness</h4>
+              <p style="font-size:0.85rem">Our access control design is informed by Zero Trust principles — verify identity, limit access, log everything, trust nothing implicitly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Audit Ready -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Audit Readiness</span>
+        <h2>Supporting Your Audit-Ready Direction</h2>
+        <p>While BlackStorm is not a compliance auditor, our monitoring and visibility services create the documented operational record that compliance conversations require.</p>
+      </div>
+      <div class="grid-4" style="gap:20px">
+        <div class="card text-center">
+          <div class="card-icon success" style="margin:0 auto 16px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3>Performance History</h3>
+          <p>Documented uptime, latency, and incident history for every monitored device — creating an operational record over time.</p>
+        </div>
+        <div class="card text-center">
+          <div class="card-icon" style="margin:0 auto 16px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Incident Documentation</h3>
+          <p>Every alert and recovery event is logged with timestamps, device identification, and duration — ready for review when needed.</p>
+        </div>
+        <div class="card text-center">
+          <div class="card-icon accent" style="margin:0 auto 16px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>Access Controls</h3>
+          <p>Role-based access management with logged authentication — demonstrating controlled access to infrastructure data.</p>
+        </div>
+        <div class="card text-center">
+          <div class="card-icon secondary" style="margin:0 auto 16px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3>Uptime Reporting</h3>
+          <p>Professional uptime attainment reports that document monitored availability over time — useful for client, leadership, and auditor review.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Security FAQ</span>
+        <h2>Questions About Our Security Approach</h2>
+      </div>
+      <div class="faq-list" style="max-width:760px;margin:0 auto">
+        <div class="faq-item">
+          <button class="faq-question">Is BlackStorm SOC 2 certified?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">No. BlackStorm is not currently SOC 2 certified. We operate with security-focused practices and compliance-aware design, but we do not claim third-party audit certifications that have not been earned. We are transparent about this and do not misrepresent our compliance posture.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How is my monitoring data protected?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Your monitoring data is stored with access controls enforced, transmitted over encrypted connections, and accessible only through authenticated portal sessions. Client environments are logically separated in multi-tenant contexts. See our Privacy Policy for full data handling details.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can BlackStorm help us prepare for a compliance audit?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">BlackStorm can support your audit-ready direction by providing documented monitoring history, incident logs, uptime reports, and uptime attainment data. We do not serve as a compliance consultant or auditor, but our operational data and reporting can be valuable documentation for audit processes.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Do you share monitoring data with third parties?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">No. Your monitoring data and infrastructure information are confidential. We do not sell, share, or use your network data for purposes beyond service delivery. Full details are in our Privacy Policy.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">What happens if there is a security incident at BlackStorm?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">In the event of a security incident affecting BlackStorm systems, we will notify affected clients promptly and transparently in accordance with our incident response practices and applicable notification requirements. We believe in honest, fast communication — especially when it matters most.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Start Building a More Defensible Operation</h2>
+      <p>Contact BlackStorm to discuss how our monitoring and visibility services can support your security posture and compliance-aware direction.</p>
+      <div class="flex-center gap-16" style="flex-wrap:wrap">
+        <a href="contact.html" class="btn btn-primary btn-lg">Talk to BlackStorm</a>
+        <a href="network-monitoring.html" class="btn btn-outline btn-lg">Explore Monitoring</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-brand" style="display:inline-flex;margin-bottom:16px"><div class="nav-logo"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true"><rect width="36" height="36" rx="8" fill="url(#bsLogoGrad)"/><path d="M22 4L12 21h6L15 32 27 15h-6.5L22 4z" fill="white"/></svg></div><div><div class="nav-brand-text">BlackStorm</div><div class="nav-brand-sub">LLC</div></div></a>
+        <p>Secure, professional technology services for businesses that demand reliability.</p>
+      </div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="investor.html">Investors</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Services</h5><ul><li><a href="network-monitoring.html">Network Monitoring</a></li><li><a href="security.html">Security &amp; Compliance</a></li><li><a href="customer-portal.html">Customer Portal</a></li><li><a href="business-portal.html">Business Portal</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+      <div class="footer-col"><h5>Resources</h5><ul><li><a href="support.html">Support / KB</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li></ul></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <p>&copy; 2025&ndash;2026 BlackStorm, LLC. All rights reserved.</p>
+      <div class="footer-status"><span class="status-dot" aria-hidden="true"></span>Service status by support request</div>
+      <div class="footer-bottom-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Network Monitoring Service — BlackStorm, LLC</title>
+  <meta name="description" content="BlackStorm's 24/7 network monitoring service delivers continuous uptime tracking, latency analysis, real-time alerts, and performance dashboards for businesses and MSPs.">
+  <meta property="og:title" content="Network Monitoring Service — BlackStorm, LLC">
+  <meta property="og:description" content="24/7 network monitoring, real-time alerts, and performance visibility for businesses and MSPs.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<svg style="width:0;height:0;position:absolute;overflow:hidden" aria-hidden="true">
+  <defs>
+    <linearGradient id="bsLogoGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4F8EF7"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="nav-brand" aria-label="BlackStorm, LLC — Home">
+        <div class="nav-logo"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true"><rect width="36" height="36" rx="8" fill="url(#bsLogoGrad)"/><path d="M22 4L12 21h6L15 32 27 15h-6.5L22 4z" fill="white"/></svg></div>
+        <div><div class="nav-brand-text">BlackStorm</div><div class="nav-brand-sub">LLC</div></div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Services <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <div class="nav-dropdown-menu">
+            <div class="nav-dropdown-label">Core Services</div>
+            <a href="network-monitoring.html"><svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Network Monitoring</a>
+            <a href="security.html"><svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Security &amp; Compliance</a>
+            <div class="nav-dropdown-label">Portals</div>
+            <a href="customer-portal.html"><svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Customer Portal</a>
+            <a href="business-portal.html"><svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Business / MSP Portal</a>
+            <hr style="border:none;border-top:1px solid var(--border-subtle);margin:4px 8px"/>
+            <a href="services.html"><svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>All Services</a>
+          </div>
+        </li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="investor.html">Investors</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="support.html" class="nav-support-link">Support</a>
+        <button class="btn-theme" id="themeToggle" aria-label="Toggle theme" title="Toggle theme"></button>
+        <a href="contact.html" class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"></button>
+    </nav>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <div class="mobile-menu-section-label">Navigation</div>
+  <a href="index.html" class="mobile-menu-link">Home</a>
+  <a href="about.html" class="mobile-menu-link">About Us</a>
+  <hr class="mobile-menu-divider"/>
+  <div class="mobile-menu-section-label">Services</div>
+  <a href="services.html" class="mobile-menu-link">All Services</a>
+  <a href="network-monitoring.html" class="mobile-menu-link">Network Monitoring</a>
+  <a href="security.html" class="mobile-menu-link">Security &amp; Compliance</a>
+  <a href="customer-portal.html" class="mobile-menu-link">Customer Portal</a>
+  <a href="business-portal.html" class="mobile-menu-link">Business / MSP Portal</a>
+  <hr class="mobile-menu-divider"/>
+  <div class="mobile-menu-section-label">Company</div>
+  <a href="pricing.html" class="mobile-menu-link">Pricing</a>
+  <a href="investor.html" class="mobile-menu-link">Investors</a>
+  <a href="contact.html" class="mobile-menu-link">Contact</a>
+  <a href="support.html" class="mobile-menu-link">Support / KB</a>
+  <hr class="mobile-menu-divider"/>
+  <a href="contact.html" class="btn btn-primary btn-full" style="margin-top:8px">Get Started</a>
+</nav>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container text-center">
+      <span class="section-label">Flagship Service</span>
+      <h1 class="animate-fade-up"><span class="gradient-text">24/7 Network Monitoring</span><br>&amp; Infrastructure Visibility</h1>
+      <p class="lead animate-fade-up delay-1" style="max-width:640px;margin:20px auto 0">Continuous monitoring of your critical network infrastructure — with real-time alerts, performance analytics, and the dashboards you need to stay ahead of every issue.</p>
+      <div class="flex-center gap-16 animate-fade-up delay-2" style="flex-wrap:wrap;margin-top:36px">
+        <a href="contact.html" class="btn btn-primary btn-lg">Start Monitoring</a>
+        <a href="pricing.html" class="btn btn-outline btn-lg">View Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Stats -->
+  <section class="section-sm section-alt">
+    <div class="container">
+      <div class="grid-4">
+        <div class="stat-card"><div class="stat-number">&lt;60s</div><div class="stat-label">Alert notification time</div></div>
+        <div class="stat-card"><div class="stat-number">24/7</div><div class="stat-label">Continuous monitoring</div></div>
+        <div class="stat-card"><div class="stat-number">99.9%</div><div class="stat-label">Platform uptime target</div></div>
+        <div class="stat-card"><div class="stat-number">30d+</div><div class="stat-label">Historical data retention</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Monitor -->
+  <section class="section" id="what-we-monitor">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Coverage</span>
+        <h2>What BlackStorm Monitors</h2>
+        <p>Our monitoring platform covers the full range of IP-addressable devices in your network environment — from core infrastructure to edge devices and servers.</p>
+      </div>
+      <div class="grid-3" style="gap:20px">
+        <div class="card">
+          <div class="card-icon" style="margin-bottom:16px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+          </div>
+          <h3>Servers &amp; Hosts</h3>
+          <p>Physical and virtual servers, cloud instances, and application hosts. Monitor availability, response time, and basic service health.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="margin-bottom:16px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Routers &amp; Switches</h3>
+          <p>Core network equipment including routers, managed switches, and backbone infrastructure — the devices your entire network depends on.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon accent" style="margin-bottom:16px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Firewalls &amp; Security Appliances</h3>
+          <p>Network security devices including firewalls, UTM appliances, and VPN gateways. Know immediately if your perimeter goes offline.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon success" style="margin-bottom:16px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1"/></svg>
+          </div>
+          <h3>Wireless Access Points</h3>
+          <p>Monitor your wireless infrastructure for availability — ensuring your Wi-Fi endpoints are online and reachable across your facility.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon secondary" style="margin-bottom:16px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <h3>Network-Attached Storage</h3>
+          <p>NAS devices and storage systems that your team depends on for file access, backups, and data operations — monitored for continuous availability.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="margin-bottom:16px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Custom IP Devices</h3>
+          <p>Any IP-addressable device in your environment — from industrial controllers to smart facility equipment — can be added to your monitoring profile.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">How It Works</span>
+        <h2>From Onboarding to Full Visibility</h2>
+        <p>Getting your environment monitored is a fast, guided process. Most clients are fully operational within a few business days.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h4>Environment Assessment</h4>
+          <p>We work with you to map your network, identify critical devices, and understand your operational requirements and alert preferences.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h4>Configuration &amp; Baseline</h4>
+          <p>Monitoring is configured for your specific environment. Baselines are established so alerts are meaningful — not noisy false positives.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h4>Continuous Monitoring</h4>
+          <p>Polling begins. Your devices are checked continuously. Performance data accumulates and dashboards populate in real time.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h4>Alert &amp; Respond</h4>
+          <p>When a device goes down or a threshold is breached, notifications go out immediately. You have the data you need to respond — fast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alert System -->
+  <section class="section" id="alerts">
+    <div class="container">
+      <div class="split-section">
+        <div class="split-content">
+          <span class="section-label">Alerting</span>
+          <h2>Be the First to Know. Every Time.</h2>
+          <p>When a monitored device goes offline, exceeds a latency threshold, or shows abnormal behavior — BlackStorm sends a notification through your preferred channel.</p>
+          <p>You configure what matters and how you want to be notified, with delivery depending on your plan and notification channel.</p>
+          <ul class="check-list" style="margin-top:20px">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>Email alerts</strong> — immediate notifications to one or more addresses
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>SMS alerts</strong> — text message notifications for urgent issues (Professional and above)
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>Dashboard alerts</strong> — visible in your customer or business portal in real time
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>Alert escalation</strong> — configure escalation paths if primary contacts are unreachable
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>Recovery notifications</strong> — know when a device comes back online, automatically
+            </li>
+          </ul>
+        </div>
+        <div class="split-visual">
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="padding:16px 20px;background:var(--bg-elevated);border:1px solid var(--color-error);border-radius:var(--radius-md);border-left:4px solid var(--color-error)">
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                <span style="font-size:0.78rem;font-weight:700;color:var(--color-error);text-transform:uppercase;letter-spacing:0.08em">ALERT — Device Down</span>
+                <span style="font-size:0.75rem;color:var(--text-muted)">14 seconds ago</span>
+              </div>
+              <p style="font-size:0.875rem;margin:0"><strong>Firewall-Main</strong> is not responding. Last seen: 2 minutes ago. Polling interval: 30s.</p>
+            </div>
+            <div style="padding:16px 20px;background:var(--bg-elevated);border:1px solid var(--color-warning);border-radius:var(--radius-md);border-left:4px solid var(--color-warning)">
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                <span style="font-size:0.78rem;font-weight:700;color:var(--color-warning);text-transform:uppercase;letter-spacing:0.08em">WARNING — High Latency</span>
+                <span style="font-size:0.75rem;color:var(--text-muted)">3 minutes ago</span>
+              </div>
+              <p style="font-size:0.875rem;margin:0"><strong>Switch-Core-02</strong> latency exceeded threshold: current 245ms, baseline 12ms.</p>
+            </div>
+            <div style="padding:16px 20px;background:var(--bg-elevated);border:1px solid var(--color-success);border-radius:var(--radius-md);border-left:4px solid var(--color-success)">
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                <span style="font-size:0.78rem;font-weight:700;color:var(--color-success);text-transform:uppercase;letter-spacing:0.08em">RECOVERY — Device Online</span>
+                <span style="font-size:0.75rem;color:var(--text-muted)">1 hour ago</span>
+              </div>
+              <p style="font-size:0.875rem;margin:0"><strong>Server-App-01</strong> is back online. Downtime duration: 7 minutes 22 seconds.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reporting -->
+  <section class="section section-alt" id="reporting">
+    <div class="container">
+      <div class="split-section reverse">
+        <div class="split-content">
+          <span class="section-label">Reporting &amp; Visibility</span>
+          <h2>Data That Tells a Story</h2>
+          <p>Monitoring data is only valuable if it's accessible and understandable. BlackStorm generates performance reports that serve every audience — from your technical team to your executive leadership to your clients.</p>
+          <ul class="check-list" style="margin-top:20px">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Monthly performance and uptime summary reports</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>uptime attainment documentation for client review</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Latency and packet loss trend charts</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Incident history and resolution log</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Executive summary format for non-technical stakeholders</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Accessible via Customer and Business portals</li>
+          </ul>
+        </div>
+        <div class="split-visual">
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--border-subtle)">
+              <strong style="font-size:0.95rem">Monthly Report — May 2026</strong>
+              <span class="badge badge-green">Generated</span>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div style="padding:16px;background:var(--bg-elevated);border-radius:var(--radius-md);text-align:center">
+                <div style="font-size:1.8rem;font-weight:800;color:var(--color-success)">99.97%</div>
+                <div style="font-size:0.75rem;color:var(--text-muted);margin-top:4px">Overall Uptime</div>
+              </div>
+              <div style="padding:16px;background:var(--bg-elevated);border-radius:var(--radius-md);text-align:center">
+                <div style="font-size:1.8rem;font-weight:800;color:var(--color-primary)">3</div>
+                <div style="font-size:0.75rem;color:var(--text-muted);margin-top:4px">Incidents This Month</div>
+              </div>
+              <div style="padding:16px;background:var(--bg-elevated);border-radius:var(--radius-md);text-align:center">
+                <div style="font-size:1.8rem;font-weight:800;color:var(--text-primary)">11ms</div>
+                <div style="font-size:0.75rem;color:var(--text-muted);margin-top:4px">Avg Latency</div>
+              </div>
+              <div style="padding:16px;background:var(--bg-elevated);border-radius:var(--radius-md);text-align:center">
+                <div style="font-size:1.8rem;font-weight:800;color:var(--color-accent)">47</div>
+                <div style="font-size:0.75rem;color:var(--text-muted);margin-top:4px">Active Devices</div>
+              </div>
+            </div>
+            <div style="padding:12px 16px;background:var(--color-success-dim);border:1px solid var(--color-success-dim);border-radius:var(--radius-md);font-size:0.85rem;color:var(--color-success)">
+              Sample uptime target met - 99.9% target, 99.97% observed
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Features</span>
+        <h2>Everything Included</h2>
+      </div>
+      <div class="grid-3" style="gap:20px">
+        <div class="card"><div class="card-icon" style="margin-bottom:16px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3>Continuous Polling</h3><p>Devices are checked continuously — not just when you remember to look. Configurable polling intervals catch failures fast.</p></div>
+        <div class="card"><div class="card-icon accent" style="margin-bottom:16px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><h3>Smart Alerting</h3><p>Alerts are triggered when thresholds are crossed — configurable per device so you get meaningful notifications, not noise.</p></div>
+        <div class="card"><div class="card-icon success" style="margin-bottom:16px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><h3>Performance Trending</h3><p>Historical latency, uptime, and availability data lets you spot trends before they become outages and document performance over time.</p></div>
+        <div class="card"><div class="card-icon secondary" style="margin-bottom:16px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h3>Portal Dashboards</h3><p>Live dashboards in both the Customer Portal and Business Portal give every stakeholder the visibility appropriate to their role.</p></div>
+        <div class="card"><div class="card-icon" style="margin-bottom:16px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Multi-User Access</h3><p>Multiple team members and clients can access the portal simultaneously with role-appropriate permissions and views.</p></div>
+        <div class="card"><div class="card-icon accent" style="margin-bottom:16px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>Secure &amp; Private</h3><p>Your monitoring data belongs to you. Access is protected, connections are encrypted, and data is handled in accordance with our privacy policy.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Start Monitoring Your Infrastructure Today</h2>
+      <p>Contact BlackStorm to schedule an onboarding consultation. We'll assess your environment and have monitoring running within a few business days.</p>
+      <div class="flex-center gap-16" style="flex-wrap:wrap">
+        <a href="contact.html" class="btn btn-primary btn-lg">Get Started</a>
+        <a href="pricing.html" class="btn btn-outline btn-lg">View Plans &amp; Pricing</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-brand" style="display:inline-flex;margin-bottom:16px"><div class="nav-logo"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true"><rect width="36" height="36" rx="8" fill="url(#bsLogoGrad)"/><path d="M22 4L12 21h6L15 32 27 15h-6.5L22 4z" fill="white"/></svg></div><div><div class="nav-brand-text">BlackStorm</div><div class="nav-brand-sub">LLC</div></div></a>
+        <p>Secure, professional technology services for businesses that demand reliability.</p>
+      </div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="investor.html">Investors</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Services</h5><ul><li><a href="network-monitoring.html">Network Monitoring</a></li><li><a href="security.html">Security &amp; Compliance</a></li><li><a href="customer-portal.html">Customer Portal</a></li><li><a href="business-portal.html">Business Portal</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+      <div class="footer-col"><h5>Resources</h5><ul><li><a href="support.html">Support / KB</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li></ul></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <p>&copy; 2025&ndash;2026 BlackStorm, LLC. All rights reserved.</p>
+      <div class="footer-status"><span class="status-dot" aria-hidden="true"></span>Service status by support request</div>
+      <div class="footer-bottom-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

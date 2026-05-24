@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business / MSP Portal Preview — BlackStorm, LLC</title>
+  <meta name="description" content="The BlackStorm Business Portal gives MSPs and operations teams a single pane of glass to manage all client environments, devices, alerts, and reports.">
+  <meta property="og:title" content="Business / MSP Portal — BlackStorm, LLC">
+  <meta property="og:description" content="Manage every client environment from one consolidated operations dashboard.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<svg style="width:0;height:0;position:absolute;overflow:hidden" aria-hidden="true">
+  <defs>
+    <linearGradient id="bsLogoGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4F8EF7"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="nav-brand" aria-label="BlackStorm, LLC — Home">
+        <div class="nav-logo"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true"><rect width="36" height="36" rx="8" fill="url(#bsLogoGrad)"/><path d="M22 4L12 21h6L15 32 27 15h-6.5L22 4z" fill="white"/></svg></div>
+        <div><div class="nav-brand-text">BlackStorm</div><div class="nav-brand-sub">LLC</div></div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Services <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <div class="nav-dropdown-menu">
+            <div class="nav-dropdown-label">Core Services</div>
+            <a href="network-monitoring.html"><svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Network Monitoring</a>
+            <a href="security.html"><svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Security &amp; Compliance</a>
+            <div class="nav-dropdown-label">Portals</div>
+            <a href="customer-portal.html"><svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Customer Portal</a>
+            <a href="business-portal.html"><svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Business / MSP Portal</a>
+            <hr style="border:none;border-top:1px solid var(--border-subtle);margin:4px 8px"/>
+            <a href="services.html"><svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>All Services</a>
+          </div>
+        </li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="investor.html">Investors</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="support.html" class="nav-support-link">Support</a>
+        <button class="btn-theme" id="themeToggle" aria-label="Toggle theme" title="Toggle theme"></button>
+        <a href="contact.html" class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"></button>
+    </nav>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <div class="mobile-menu-section-label">Navigation</div>
+  <a href="index.html" class="mobile-menu-link">Home</a>
+  <a href="about.html" class="mobile-menu-link">About Us</a>
+  <hr class="mobile-menu-divider"/>
+  <div class="mobile-menu-section-label">Services</div>
+  <a href="services.html" class="mobile-menu-link">All Services</a>
+  <a href="network-monitoring.html" class="mobile-menu-link">Network Monitoring</a>
+  <a href="security.html" class="mobile-menu-link">Security &amp; Compliance</a>
+  <a href="customer-portal.html" class="mobile-menu-link">Customer Portal</a>
+  <a href="business-portal.html" class="mobile-menu-link">Business / MSP Portal</a>
+  <hr class="mobile-menu-divider"/>
+  <div class="mobile-menu-section-label">Company</div>
+  <a href="pricing.html" class="mobile-menu-link">Pricing</a>
+  <a href="investor.html" class="mobile-menu-link">Investors</a>
+  <a href="contact.html" class="mobile-menu-link">Contact</a>
+  <a href="support.html" class="mobile-menu-link">Support / KB</a>
+  <hr class="mobile-menu-divider"/>
+  <a href="contact.html" class="btn btn-primary btn-full" style="margin-top:8px">Get Started</a>
+</nav>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container text-center">
+      <span class="section-label">Business / MSP Portal</span>
+      <h1 class="animate-fade-up">Manage Every Client.<br><span class="gradient-text">From One Pane.</span></h1>
+      <p class="lead animate-fade-up delay-1" style="max-width:620px;margin:20px auto 0">The BlackStorm Business Portal is the operations center for MSPs and multi-site businesses — a consolidated view of every client environment, every device, and every alert.</p>
+      <div class="flex-center gap-16 animate-fade-up delay-2" style="flex-wrap:wrap;margin-top:36px">
+        <a href="contact.html" class="btn btn-primary btn-lg">Request Access</a>
+        <a href="pricing.html" class="btn btn-outline btn-lg">Business Plans</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portal Preview -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Portal Preview</span>
+        <h2>Your Operations Center</h2>
+        <p>A live, consolidated dashboard giving your team visibility across every client environment in a single view.</p>
+      </div>
+      <div class="portal-preview" style="max-width:960px;margin:0 auto">
+        <div class="portal-toolbar">
+          <div class="portal-dots">
+            <div class="portal-dot red"></div>
+            <div class="portal-dot yellow"></div>
+            <div class="portal-dot green"></div>
+          </div>
+          <div class="portal-url">ops.blackstorm.llc/dashboard — Operations Center</div>
+        </div>
+        <div class="portal-body">
+          <!-- Header -->
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border-subtle)">
+            <div>
+              <h3 style="margin:0;font-size:1.05rem">Operations Overview — 8 Active Clients</h3>
+              <p style="font-size:0.8rem;margin:4px 0 0;color:var(--text-muted)">247 devices monitored · Last refresh: 15 seconds ago</p>
+            </div>
+            <div style="display:flex;gap:8px">
+              <span class="badge badge-green">7 All Clear</span>
+              <span class="badge badge-orange">1 Warning</span>
+            </div>
+          </div>
+          <!-- Summary stats -->
+          <div class="portal-stat-row" style="margin-bottom:24px">
+            <div class="portal-stat"><div class="portal-stat-val">8</div><div class="portal-stat-lbl">Active Clients</div></div>
+            <div class="portal-stat"><div class="portal-stat-val">247</div><div class="portal-stat-lbl">Total Devices</div></div>
+            <div class="portal-stat"><div class="portal-stat-val" style="color:var(--color-warning)">2</div><div class="portal-stat-lbl">Open Alerts</div></div>
+            <div class="portal-stat"><div class="portal-stat-val" style="color:var(--color-success)">99.96%</div><div class="portal-stat-lbl">Fleet Uptime</div></div>
+          </div>
+          <!-- Client list -->
+          <h4 style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:12px">Client Environments</h4>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Client</th>
+                  <th>Devices</th>
+                  <th>Uptime (30d)</th>
+                  <th>Active Alerts</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>ACME Corporation</strong></td>
+                  <td>47</td>
+                  <td>Healthy</td>
+                  <td>0</td>
+                  <td><span class="badge badge-green">Operational</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Metro Logistics Co.</strong></td>
+                  <td>63</td>
+                  <td>Needs Review</td>
+                  <td><span style="color:var(--color-warning);font-weight:700">2</span></td>
+                  <td><span class="badge badge-orange">Warning</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Northside Medical</strong></td>
+                  <td>34</td>
+                  <td>Healthy</td>
+                  <td>0</td>
+                  <td><span class="badge badge-green">Operational</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Peak Financial Group</strong></td>
+                  <td>28</td>
+                  <td>Healthy</td>
+                  <td>0</td>
+                  <td><span class="badge badge-green">Operational</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Riverside School District</strong></td>
+                  <td>75</td>
+                  <td>Healthy</td>
+                  <td>0</td>
+                  <td><span class="badge badge-green">Operational</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Business Portal Features</span>
+        <h2>Built for MSP Operations</h2>
+        <p>Every feature in the Business Portal is designed around the workflow of a technician team managing multiple client environments simultaneously.</p>
+      </div>
+      <div class="grid-3" style="gap:20px">
+        <div class="card">
+          <div class="card-icon" style="margin-bottom:16px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Multi-Client Dashboard</h3>
+          <p>See every client's status at a glance — uptime, active alerts, device count, and overall health — in a single consolidated operations view.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon accent" style="margin-bottom:16px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </div>
+          <h3>Cross-Client Alert Management</h3>
+          <p>Acknowledge, track, and close alerts across all client environments from one screen. Never lose an open alert because it's buried in a per-client view.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon success" style="margin-bottom:16px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>Role-Based Access Control</h3>
+          <p>Assign technicians appropriate access levels. Tier-1 staff see what they need; senior engineers have broader access. No over-permissioning by default.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon secondary" style="margin-bottom:16px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <h3>Per-Client Drill-Down</h3>
+          <p>Click into any client environment for a full detailed view — device list, alert history, performance charts, and reporting — without switching tools.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="margin-bottom:16px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3>Fleet-Level Reporting</h3>
+          <p>Generate reports across all clients simultaneously or individually — monthly performance summaries, uptime attainment, and incident logs ready to send.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon accent" style="margin-bottom:16px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Real-Time Operations Feed</h3>
+          <p>A live activity feed showing alert events, recovery notifications, and device status changes across all monitored environments in real time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who It's For -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Use Cases</span>
+        <h2>Who Uses the Business Portal</h2>
+      </div>
+      <div class="grid-3" style="gap:20px">
+        <div class="feature-card">
+          <div class="card-icon secondary" style="margin-bottom:20px;width:52px;height:52px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Managed Service Providers</h3>
+          <p>MSPs managing 5 to 500+ client environments need a centralized operations view. The Business Portal is designed specifically for MSP technician workflows — fast, consolidated, and organized by client.</p>
+          <ul class="check-list" style="margin-top:16px">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>All clients in one view</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Technician role management</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Per-client Uptime reporting</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <div class="card-icon" style="margin-bottom:20px;width:52px;height:52px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <h3>Multi-Site Businesses</h3>
+          <p>Businesses operating across multiple locations — offices, warehouses, branches — need visibility into every site from a single operations team. The portal aggregates all sites into one operational view.</p>
+          <ul class="check-list" style="margin-top:16px">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Multi-location visibility</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Site-level drill-down</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Consolidated alert management</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <div class="card-icon accent" style="margin-bottom:20px;width:52px;height:52px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Operations &amp; NOC Teams</h3>
+          <p>Network Operations Center teams need an continuous, real-time view of the entire monitored estate. The Business Portal's live feed and consolidated alert view is built for continuous operations monitoring.</p>
+          <ul class="check-list" style="margin-top:16px">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Live activity feed</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Real-time alert status</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Audit-ready incident logging</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Consolidate Your MSP Operations with BlackStorm</h2>
+      <p>Business and Enterprise plans include full Business Portal access. Contact us to discuss your environment and get a personalized onboarding plan.</p>
+      <div class="flex-center gap-16" style="flex-wrap:wrap">
+        <a href="contact.html" class="btn btn-primary btn-lg">Contact BlackStorm</a>
+        <a href="pricing.html" class="btn btn-outline btn-lg">View Business Plans</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-brand" style="display:inline-flex;margin-bottom:16px"><div class="nav-logo"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true"><rect width="36" height="36" rx="8" fill="url(#bsLogoGrad)"/><path d="M22 4L12 21h6L15 32 27 15h-6.5L22 4z" fill="white"/></svg></div><div><div class="nav-brand-text">BlackStorm</div><div class="nav-brand-sub">LLC</div></div></a>
+        <p>Secure, professional technology services for businesses that demand reliability.</p>
+      </div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="investor.html">Investors</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Services</h5><ul><li><a href="network-monitoring.html">Network Monitoring</a></li><li><a href="security.html">Security &amp; Compliance</a></li><li><a href="customer-portal.html">Customer Portal</a></li><li><a href="business-portal.html">Business Portal</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
+      <div class="footer-col"><h5>Resources</h5><ul><li><a href="support.html">Support / KB</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li></ul></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <p>&copy; 2025&ndash;2026 BlackStorm, LLC. All rights reserved.</p>
+      <div class="footer-status"><span class="status-dot" aria-hidden="true"></span>Service status by support request</div>
+      <div class="footer-bottom-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
