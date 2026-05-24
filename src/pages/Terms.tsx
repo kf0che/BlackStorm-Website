@@ -13,7 +13,7 @@ export default function Terms() {
           <span className="section-label">Terms</span>
           <h1>Terms of Service</h1>
           <p className="lead" style={{ maxWidth: 680, marginTop: 16 }}>
-            Last updated: [UPDATE: add launch date]
+            Last updated: May 24, 2026
           </p>
         </div>
       </div>
@@ -49,17 +49,18 @@ export default function Terms() {
           <h2>Contact</h2>
           <p>
             Questions about these terms can be sent to{' '}
-            <a href="mailto:support@blackstorm.example" style={{ color: 'var(--color-primary)' }}>
-              support@blackstorm.example
+            <a href="mailto:support@blackstorm.llc" style={{ color: 'var(--color-primary)' }}>
+              support@blackstorm.llc
             </a>{' '}
-            until final public contact information is confirmed.
+            .
           </p>
 
           <div className="alert alert-orange" style={{ marginTop: 32 }}>
             <div>
-              <strong>Attorney review required.</strong>
+              <strong>Legal note.</strong>
               <p style={{ marginTop: 6, marginBottom: 0 }}>
-                This document should be reviewed by a qualified attorney before public launch.
+                These terms are provided for public launch readiness and should be reviewed
+                periodically by qualified counsel as BlackStorm services mature.
               </p>
             </div>
           </div>

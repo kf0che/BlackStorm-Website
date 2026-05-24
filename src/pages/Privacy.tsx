@@ -5,7 +5,7 @@ export default function Privacy() {
     <>
       <SEO
         title="Privacy Policy | BlackStorm, LLC"
-        description="Read the launch privacy policy for BlackStorm, LLC, including placeholder contact information and attorney review notice."
+        description="Read the privacy policy for BlackStorm, LLC, including how we handle contact, service inquiry, and support information."
       />
 
       <div className="page-hero">
@@ -13,7 +13,7 @@ export default function Privacy() {
           <span className="section-label">Privacy</span>
           <h1>Privacy Policy</h1>
           <p className="lead" style={{ maxWidth: 680, marginTop: 16 }}>
-            Last updated: [UPDATE: add launch date]
+            Last updated: May 24, 2026
           </p>
         </div>
       </div>
@@ -47,17 +47,18 @@ export default function Privacy() {
           <h2>Contact</h2>
           <p>
             Privacy questions can be sent to{' '}
-            <a href="mailto:support@blackstorm.example" style={{ color: 'var(--color-primary)' }}>
-              support@blackstorm.example
+            <a href="mailto:support@blackstorm.llc" style={{ color: 'var(--color-primary)' }}>
+              support@blackstorm.llc
             </a>{' '}
-            until final public contact information is confirmed.
+            .
           </p>
 
           <div className="alert alert-orange" style={{ marginTop: 32 }}>
             <div>
-              <strong>Attorney review required.</strong>
+              <strong>Legal note.</strong>
               <p style={{ marginTop: 6, marginBottom: 0 }}>
-                This document should be reviewed by a qualified attorney before public launch.
+                This policy is provided for public launch readiness and should be reviewed
+                periodically by qualified counsel as BlackStorm services mature.
               </p>
             </div>
           </div>

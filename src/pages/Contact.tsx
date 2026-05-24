@@ -6,6 +6,16 @@ export default function Contact() {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+    const form = new FormData(event.currentTarget)
+    const subject = encodeURIComponent(`BlackStorm inquiry: ${String(form.get('topic') || 'General Question')}`)
+    const body = encodeURIComponent([
+      `Name: ${form.get('name') || ''}`,
+      `Email: ${form.get('email') || ''}`,
+      `Topic: ${form.get('topic') || ''}`,
+      '',
+      String(form.get('message') || ''),
+    ].join('\n'))
+    window.location.href = `mailto:support@blackstorm.llc?subject=${subject}&body=${body}`
     setSubmitted(true)
   }
 
@@ -22,7 +32,7 @@ export default function Contact() {
           <h1>Contact BlackStorm</h1>
           <p className="lead" style={{ maxWidth: 680, marginTop: 16 }}>
             Ask about services, request help, or tell us what you need monitored.
-            Placeholder contact details are listed until final public contact channels are confirmed.
+            A real person will review your message and follow up as availability allows.
           </p>
         </div>
       </div>
@@ -34,10 +44,9 @@ export default function Contact() {
               {submitted ? (
                 <div className="alert alert-blue" role="status">
                   <div>
-                    <strong>Thanks. Your message is ready for launch integration.</strong>
+                    <strong>Thanks. Your email app should open with your message.</strong>
                     <p style={{ marginTop: 6, marginBottom: 0 }}>
-                      This form is currently a front-end placeholder. Connect it to the final
-                      contact form provider before public launch.
+                      If it does not open, email us directly at support@blackstorm.llc.
                     </p>
                   </div>
                 </div>
@@ -52,10 +61,6 @@ export default function Contact() {
                       <label className="form-label" htmlFor="email">Email</label>
                       <input id="email" name="email" type="email" className="form-input" autoComplete="email" required />
                     </div>
-                  </div>
-                  <div className="form-group">
-                    <label className="form-label" htmlFor="phone">Phone</label>
-                    <input id="phone" name="phone" type="tel" className="form-input" autoComplete="tel" placeholder="[UPDATE: optional phone]" />
                   </div>
                   <div className="form-group">
                     <label className="form-label" htmlFor="topic">Topic</label>
@@ -82,14 +87,12 @@ export default function Contact() {
               )}
             </div>
             <aside className="card">
-              <h3>Launch contact placeholders</h3>
+              <h3>Contact details</h3>
               <p>
-                Email: <a href="mailto:support@blackstorm.example" style={{ color: 'var(--color-primary)' }}>support@blackstorm.example</a>
+                Email: <a href="mailto:support@blackstorm.llc" style={{ color: 'var(--color-primary)' }}>support@blackstorm.llc</a>
               </p>
-              <p>Phone: [UPDATE: add public phone number]</p>
-              <p>Contact form: [UPDATE: connect form provider]</p>
               <p style={{ marginBottom: 0 }}>
-                For urgent production support, use the final support channel once it is published.
+                Please do not send passwords, private keys, or sensitive secrets through this form.
               </p>
             </aside>
           </div>
