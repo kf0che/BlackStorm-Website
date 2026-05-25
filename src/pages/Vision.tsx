@@ -125,11 +125,8 @@ export default function Vision() {
             {visionItems.map((item, idx) => (
               <div
                 key={item.title}
+                className="vision-timeline-row"
                 style={{
-                  display: 'grid',
-                  gridTemplateColumns: '200px 1fr',
-                  gap: 32,
-                  alignItems: 'start',
                   paddingBottom: 32,
                   borderBottom: idx < visionItems.length - 1 ? '1px solid var(--border-subtle)' : 'none',
                 }}
