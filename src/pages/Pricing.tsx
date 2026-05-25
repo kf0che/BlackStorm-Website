@@ -138,7 +138,7 @@ export default function Pricing() {
           </div>
 
           <div className="card" style={{ marginTop: 32, padding: 40 }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 32, alignItems: 'center' }}>
+            <div className="pricing-custom-layout">
               <div>
                 <div className="pricing-tier-name">Enterprise</div>
                 <h3 style={{ marginBottom: 12 }}>More Than 100 Devices?</h3>

@@ -660,6 +660,11 @@ p { color: var(--text-secondary); line-height: 1.75; }
   box-shadow: var(--shadow-glow);
 }
 
+.service-card-layout > *,
+.pricing-custom-layout > * {
+  min-width: 0;
+}
+
 /* Stat card */
 .stat-card {
   text-align: center;
@@ -891,6 +896,13 @@ p { color: var(--text-secondary); line-height: 1.75; }
 .pricing-card.featured {
   border-color: var(--color-primary);
   box-shadow: var(--shadow-glow);
+}
+
+.pricing-custom-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(min(100%, 220px), auto);
+  gap: 32px;
+  align-items: center;
 }
 
 .pricing-featured-badge {
@@ -1420,6 +1432,10 @@ tr:hover td { background: var(--bg-card-hover); }
   .nav-mobile-toggle { display: flex; align-items: center; justify-content: center; }
   .split-section, .split-section.reverse { grid-template-columns: 1fr; direction: ltr; gap: 48px; }
   .split-section.reverse > * { direction: ltr; }
+  .service-card-layout,
+  .pricing-custom-layout {
+    grid-template-columns: 1fr !important;
+  }
   .feature-card > div[style*="1fr 1fr"] {
     grid-template-columns: 1fr !important;
     gap: 32px !important;

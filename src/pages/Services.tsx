@@ -229,10 +229,12 @@ export default function Services() {
             {currentServices.map((svc, idx) => (
               <div
                 key={svc.title}
-                className="feature-card"
+                className="feature-card service-card-layout"
                 style={{
                   display: 'grid',
-                  gridTemplateColumns: idx === 0 ? '1fr 1fr' : '1fr auto',
+                  gridTemplateColumns: idx === 0
+                    ? 'minmax(0, 1fr) minmax(0, 1fr)'
+                    : 'minmax(0, 1fr) minmax(min(100%, 280px), 0.55fr)',
                   gap: 40,
                   alignItems: 'start',
                 }}
