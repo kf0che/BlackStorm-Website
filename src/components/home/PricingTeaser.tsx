@@ -6,7 +6,7 @@ const tiers = [
     name: 'Home',
     audience: 'Homeowners & Home Labs',
     price: 29,
-    deviceCount: 'Up to 10 monitored devices',
+    deviceCount: 'Up to 5 monitored devices',
     features: [
       'Email alerts',
       'Monthly uptime summary',
@@ -20,7 +20,7 @@ const tiers = [
     name: 'Business',
     audience: 'Small Businesses & Organizations',
     price: 79,
-    deviceCount: 'Up to 50 monitored devices',
+    deviceCount: 'Up to 25 monitored devices',
     features: [
       'Email and SMS alerts',
       'Monthly report download',
@@ -34,7 +34,7 @@ const tiers = [
     name: 'Professional',
     audience: 'Multi-Site & Larger Operations',
     price: 199,
-    deviceCount: 'Up to 200 monitored devices',
+    deviceCount: 'Up to 100 monitored devices',
     features: [
       'All Business features',
       'Multi-location organization',

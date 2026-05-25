@@ -1,21 +1,20 @@
 import { Link } from 'react-router-dom'
-import ContactEmailLink from '../ui/ContactEmailLink'
 
 const supportChannels = [
   {
-    title: 'Email Us Directly',
-    body: 'New customer questions, service inquiries, and general requests. Verified email contact will appear here once setup is complete.',
-    cta: <ContactEmailLink className="btn btn-outline" />,
+    title: 'New Customer Questions',
+    body: 'Not sure where to start? Tell us a little about your setup and we\'ll give you an honest answer about whether and how we can help.',
+    cta: <Link to="/contact" className="btn btn-outline">Send a Message</Link>,
   },
   {
-    title: 'Technical Support',
-    body: 'Existing customers with account or monitoring questions can use the contact form while verified support email setup is pending.',
-    cta: <ContactEmailLink className="btn btn-outline" />,
-  },
-  {
-    title: 'Contact Form',
-    body: 'Prefer a form? Fill out a few details about your situation and we\'ll follow up with honest answers — no sales pressure.',
+    title: 'Existing Customers',
+    body: 'Account questions, monitoring issues, or anything related to your current service — use the contact form and we\'ll respond within your plan\'s support window.',
     cta: <Link to="/contact" className="btn btn-outline">Open Contact Form</Link>,
+  },
+  {
+    title: 'Browse Before You Ask',
+    body: 'Our knowledge base covers common questions about monitoring, alerts, WiFi, and getting started — no account required.',
+    cta: <Link to="/support" className="btn btn-outline">Visit Knowledge Base</Link>,
   },
 ]
 

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import ContactEmailLink from '../components/ui/ContactEmailLink'
+
 
 const categories = [
   {
@@ -264,7 +264,9 @@ export default function Support() {
                 Include your account email and describe the issue as specifically as you can —
                 what device, what happened, when.
               </p>
-              <ContactEmailLink className="btn btn-outline" style={{ marginTop: 16, display: 'inline-flex' }} />
+              <Link to="/contact" className="btn btn-outline" style={{ marginTop: 16 }}>
+                Open Contact Form
+              </Link>
             </div>
             <div className="card">
               <div className="card-header">
