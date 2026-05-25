@@ -57,10 +57,10 @@ const tiers = [
   {
     id: 'professional',
     name: 'Professional',
-    audience: 'Enterprise',
+    audience: 'Growing Businesses',
     price: 199,
     deviceCount: 'Up to 100 devices',
-    description: 'For enterprise teams that need deep visibility, reporting, and multi-user access.',
+    description: 'For growing businesses and multi-site operations that need full visibility, reporting, and multi-user access.',
     features: [
       'Email + SMS + multi-channel alerts',
       '30-second polling interval',

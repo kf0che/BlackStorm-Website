@@ -96,7 +96,7 @@ export default function Investors() {
           <div className="roadmap" style={{ maxWidth: 720, margin: '0 auto' }}>
             {[
               { title: 'Platform Foundation', desc: 'Network monitoring service built and deployed. Customer portal, alert system, and reporting infrastructure live.', badge: 'Complete', badgeClass: 'badge-green', done: true },
-              { title: 'Customer Acquisition', desc: 'Actively onboarding first paying customers across residential, small business, and enterprise segments.', badge: 'In Progress', badgeClass: 'badge-blue', done: false },
+              { title: 'Customer Acquisition', desc: 'Actively onboarding first paying customers across residential and small business segments.', badge: 'In Progress', badgeClass: 'badge-blue', done: false },
               { title: 'Security Reporting', desc: 'Research phase for security-aware reporting features — vulnerability awareness and posture visibility for existing customers.', badge: 'Research', badgeClass: 'badge-orange', done: false },
               { title: 'Platform Expansion', desc: 'Future services including managed connectivity and additional BlackStorm platform capabilities. Planning stage, no committed timeline.', badge: 'Planning', badgeClass: 'badge-gray', done: false },
             ].map(item => (
