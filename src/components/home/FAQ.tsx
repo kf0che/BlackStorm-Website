@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: 'How do I get started?',
-    a: 'Reach out through our contact form or by email. Tell us a little about your setup — what devices you want monitored, where they are, and what concerns you most. We\'ll respond within one business day with honest answers and next steps.',
+    a: 'Reach out by direct email or phone. Tell us a little about your setup — what devices you want monitored, where they are, and what concerns you most. We\'ll respond within one business day with honest answers and next steps.',
   },
 ]
 
@@ -40,8 +40,8 @@ export default function FAQ() {
           <h2 id="homepage-faq-title">Plain Answers Before You Reach Out</h2>
           <p>
             Still have questions?{' '}
-            <Link to="/contact" style={{ color: 'var(--color-primary)' }}>Use our contact form</Link>
-            {' '}or use our verified email once setup is complete:{' '}
+            <Link to="/contact" style={{ color: 'var(--color-primary)' }}>Use our contact page</Link>
+            {' '}or email us directly at{' '}
             <ContactEmailLink style={{ color: 'var(--color-primary)' }} />.
           </p>
         </div>

@@ -71,14 +71,8 @@ export default function Header({ mobileOpen, onMobileToggle }: HeaderProps) {
       <div className="container">
         <nav className="nav" role="navigation" aria-label="Main navigation">
 
-          <Link to="/" className="nav-brand" aria-label={`${businessContact.businessName} Home`}>
-            <div className="nav-logo">
-              <BrandMark />
-            </div>
-            <div>
-              <div className="nav-brand-text">BlackStorm</div>
-              <div className="nav-brand-sub">LLC</div>
-            </div>
+          <Link to="/" className="nav-brand" aria-label={`${businessContact.businessName} — Home`}>
+            <BrandMark className="brand-logo-img nav-logo-img" loading="eager" fetchPriority="high" />
           </Link>
 
           <ul className="nav-links" role="list">

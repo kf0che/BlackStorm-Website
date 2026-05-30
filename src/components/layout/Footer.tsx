@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import BrandMark from '../brand/BrandMark'
-import { businessContact } from '../../config/business'
+import { businessContact, contactEmails, emailHref, phoneHref } from '../../config/business'
 
 export default function Footer() {
   return (
@@ -8,16 +8,23 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <Link to="/" className="nav-brand" style={{ display: 'inline-flex', marginBottom: 16 }}>
-              <div className="nav-logo">
-                <BrandMark />
-              </div>
-              <div>
-                <div className="nav-brand-text">BlackStorm</div>
-                <div className="nav-brand-sub">LLC</div>
-              </div>
+            <Link to="/" className="nav-brand" aria-label={`${businessContact.businessName} — Home`}>
+              <BrandMark className="brand-logo-img footer-logo-img" loading="lazy" fetchPriority="low" />
             </Link>
             <p>Professional network monitoring and practical visibility for small businesses, MSPs, and growing teams.</p>
+            <a
+              href={emailHref(contactEmails.general)}
+              style={{ color: 'var(--color-primary)', display: 'inline-block', fontSize: '0.875rem', marginTop: 12 }}
+            >
+              {contactEmails.general}
+            </a>
+            <a
+              href={phoneHref(businessContact.phone)}
+              style={{ color: 'var(--color-primary)', display: 'inline-block', fontSize: '0.875rem', marginTop: 8 }}
+            >
+              {businessContact.phone}
+            </a>
+            <p style={{ whiteSpace: 'pre-line', marginTop: 10 }}>{businessContact.address}</p>
           </div>
 
           <div className="footer-col">
@@ -42,9 +49,13 @@ export default function Footer() {
           </div>
 
           <div className="footer-col">
-            <h5>Resources</h5>
+            <h5>Contact & Legal</h5>
             <ul>
+              <li><Link to="/contact">Contact</Link></li>
+              <li><a href={emailHref(contactEmails.general)}>Email Us</a></li>
+              <li><a href={phoneHref(businessContact.phone)}>Call Office</a></li>
               <li><Link to="/support">Support & Knowledge Base</Link></li>
+              <li><a href={emailHref(contactEmails.support)}>Email Support</a></li>
               <li><Link to="/privacy">Privacy Policy</Link></li>
               <li><Link to="/terms">Terms of Service</Link></li>
             </ul>
@@ -60,6 +71,7 @@ export default function Footer() {
             Service status by support request
           </div>
           <div className="footer-bottom-links">
+            <Link to="/contact">Contact</Link>
             <Link to="/privacy">Privacy</Link>
             <Link to="/terms">Terms</Link>
             <Link to="/support">Support</Link>

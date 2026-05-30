@@ -1,44 +1,103 @@
-import { useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
-import { businessContact } from '../config/business'
+import { businessContact, contactEmails, emailHref, phoneHref } from '../config/business'
 
-const contactCards = [
-  businessContact.email.trim() && {
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-        <polyline points="22,6 12,13 2,6"/>
-      </svg>
-    ),
-    title: 'Email',
-    desc: 'General inquiries, new customer questions, and anything else.',
-    value: businessContact.email,
-    href: `mailto:${businessContact.email}`,
+const emailContacts = [
+  {
+    title: 'General Contact',
+    desc: 'New customer questions, account questions, and anything that needs a human reply.',
+    value: contactEmails.general,
+    href: emailHref(contactEmails.general, 'BlackStorm general inquiry'),
   },
-  businessContact.phone.trim() && {
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/>
-      </svg>
-    ),
-    title: 'Phone',
-    desc: 'Available during business hours, Monday through Friday.',
-    value: businessContact.phone,
-    href: `tel:${businessContact.phone.replace(/\D/g, '').replace(/^/, '+')}`,
+  {
+    title: 'Support',
+    desc: 'Existing customer support, monitoring questions, and service issues.',
+    value: contactEmails.support,
+    href: emailHref(contactEmails.support, 'BlackStorm support request'),
   },
-  businessContact.address.trim() && {
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"/>
-        <circle cx="12" cy="10" r="3"/>
-      </svg>
-    ),
-    title: 'Address',
-    desc: 'Mailing address for BlackStorm, LLC.',
-    value: businessContact.address,
-    href: undefined,
+  {
+    title: 'Sales & Partnerships',
+    desc: 'Plan questions, partnerships, and business inquiries.',
+    value: contactEmails.sales,
+    href: emailHref(contactEmails.sales, 'BlackStorm sales inquiry'),
   },
-].filter(Boolean) as Array<{ icon: JSX.Element; title: string; desc: string; value: string; href: string | undefined }>
+]
+
+const principalContacts = contactEmails.principals.map(person => ({
+  title: person.name,
+  desc: 'Direct principal contact.',
+  value: person.email,
+  href: emailHref(person.email, 'BlackStorm direct inquiry'),
+}))
+
+function MailIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+      <polyline points="22,6 12,13 2,6"/>
+    </svg>
+  )
+}
+
+function PhoneIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/>
+    </svg>
+  )
+}
+
+function PersonIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M20 21a8 8 0 0 0-16 0"/>
+      <circle cx="12" cy="7" r="4"/>
+    </svg>
+  )
+}
+
+function AddressIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </svg>
+  )
+}
+
+function ContactCard({
+  icon,
+  title,
+  desc,
+  value,
+  href,
+}: {
+  icon: JSX.Element
+  title: string
+  desc: string
+  value: string
+  href?: string
+}) {
+  return (
+    <div className="card">
+      <div className="card-header">
+        <div className="card-icon">{icon}</div>
+        <div>
+          <h3 style={{ fontSize: '1rem', marginBottom: 4 }}>{title}</h3>
+          <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: 6 }}>{desc}</p>
+          {href ? (
+            <a href={href} style={{ fontSize: '0.875rem', color: 'var(--color-primary)' }}>
+              {value}
+            </a>
+          ) : (
+            <span style={{ fontSize: '0.875rem', color: 'var(--text-primary)', whiteSpace: 'pre-line' }}>
+              {value}
+            </span>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
 
 const responseTimes = [
   { label: 'New inquiries', time: '1 business day' },
@@ -48,150 +107,60 @@ const responseTimes = [
 ]
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault()
-    const form = e.currentTarget as HTMLFormElement
-    await fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form) as unknown as Record<string, string>).toString(),
-    })
-    setSubmitted(true)
-  }
-
   return (
     <>
-      {/* ── Hero ─────────────────────────────────────────── */}
       <div className="page-hero">
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <span className="section-label">Contact</span>
           <h1>Get in Touch</h1>
           <p className="lead" style={{ maxWidth: 560, marginTop: 16 }}>
-            Whether you have a question, a problem, or just want to understand your options —
-            we are here. You will hear from a real person, not an automated system.
+            For the fastest response, please contact us directly via email or phone.
+            You will hear from a real person, not an automated system.
           </p>
         </div>
       </div>
 
-      {/* ── Form + Sidebar ───────────────────────────────── */}
       <section className="section">
         <div className="container">
+          <div className="alert alert-blue" style={{ marginBottom: 32 }}>
+            <MailIcon />
+            <div>
+              <strong>Direct contact is the launch path.</strong>
+              <p style={{ marginTop: 6, marginBottom: 0 }}>
+                We are not using website backend form processing for launch on IONOS.
+                For the fastest response, please contact us directly via email or phone.
+              </p>
+            </div>
+          </div>
+
           <div className="split-section">
-            {/* Form */}
             <div className="split-content">
-              {submitted ? (
-                <div className="alert alert-blue">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <polyline points="20 6 9 17 4 12"/>
-                  </svg>
-                  <div>
-                    <strong>Message received — thank you.</strong>
-                    <p style={{ marginTop: 6, marginBottom: 0 }}>
-                      We have received your message and will follow up within one business day.
-                      Your information is kept private and will not be shared with third parties.
-                    </p>
-                  </div>
-                </div>
-              ) : (
-                <>
-                  <h2 style={{ marginBottom: 24, fontSize: '1.4rem' }}>Send Us a Message</h2>
-                  <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-                    <input type="hidden" name="form-name" value="contact" />
-                    <div className="form-grid">
-                      <div className="form-group">
-                        <label className="form-label" htmlFor="firstName">First Name</label>
-                        <input id="firstName" type="text" className="form-input" placeholder="Jane" required />
-                      </div>
-                      <div className="form-group">
-                        <label className="form-label" htmlFor="lastName">Last Name</label>
-                        <input id="lastName" type="text" className="form-input" placeholder="Smith" required />
-                      </div>
-                    </div>
-                    <div className="form-group">
-                      <label className="form-label" htmlFor="email">Email Address</label>
-                      <input id="email" type="email" className="form-input" placeholder="jane@yourcompany.com" required />
-                    </div>
-                    <div className="form-group">
-                      <label className="form-label" htmlFor="company">
-                        Company / Organization
-                        <span style={{ color: 'var(--text-muted)', fontWeight: 400, marginLeft: 6, fontSize: '0.8rem' }}>(optional)</span>
-                      </label>
-                      <input id="company" type="text" className="form-input" placeholder="Your business, church, or organization" />
-                    </div>
-                    <div className="form-group">
-                      <label className="form-label" htmlFor="subject">What can we help with?</label>
-                      <select id="subject" className="form-select form-input" required defaultValue="">
-                        <option value="" disabled>Select a topic</option>
-                        <optgroup label="Monitoring Service">
-                          <option>I want to start monitoring my network</option>
-                          <option>Question about an existing monitoring account</option>
-                          <option>Pricing and plan information</option>
-                        </optgroup>
-                        <optgroup label="Consulting & Technical Help">
-                          <option>WiFi optimization or assessment</option>
-                          <option>UniFi setup or troubleshooting</option>
-                          <option>Privacy-focused technology guidance</option>
-                          <option>Home or small business technology consulting</option>
-                          <option>Technology training or education</option>
-                        </optgroup>
-                        <optgroup label="Other">
-                          <option>Partnership or business inquiry</option>
-                          <option>Investor inquiry</option>
-                          <option>Something else</option>
-                        </optgroup>
-                      </select>
-                    </div>
-                    <div className="form-group">
-                      <label className="form-label" htmlFor="message">Message</label>
-                      <textarea
-                        id="message"
-                        className="form-textarea"
-                        placeholder="Tell us about your situation — your network, your devices, what's not working, or what you'd like to accomplish. The more context you give us, the more useful our first response will be."
-                        required
-                      />
-                    </div>
-                    <p className="form-hint">
-                      We respond to all inquiries within one business day. Your information is
-                      never shared with third parties. See our{' '}
-                      <Link to="/privacy" style={{ color: 'var(--color-primary)' }}>Privacy Policy</Link>.
-                    </p>
-                    <button type="submit" className="btn btn-primary">
-                      Send Message
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                        <line x1="22" y1="2" x2="11" y2="13"/>
-                        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-                      </svg>
-                    </button>
-                  </form>
-                </>
-              )}
+              <h2 style={{ marginBottom: 24, fontSize: '1.4rem' }}>Email Us Directly</h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+                {emailContacts.map(card => (
+                  <ContactCard key={card.title} icon={<MailIcon />} {...card} />
+                ))}
+                <ContactCard
+                  icon={<PhoneIcon />}
+                  title="Office Phone"
+                  desc="Call during business hours, Monday through Friday."
+                  value={businessContact.phone}
+                  href={phoneHref(businessContact.phone)}
+                />
+              </div>
             </div>
 
-            {/* Sidebar */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-              {contactCards.map(card => (
-                <div className="card" key={card.title}>
-                  <div className="card-header">
-                    <div className="card-icon">{card.icon}</div>
-                    <div>
-                      <h3 style={{ fontSize: '1rem', marginBottom: 4 }}>{card.title}</h3>
-                      <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: 6 }}>{card.desc}</p>
-                      {card.href ? (
-                        <a href={card.href} style={{ fontSize: '0.875rem', color: 'var(--color-primary)' }}>
-                          {card.value}
-                        </a>
-                      ) : (
-                        <span style={{ fontSize: '0.875rem', color: 'var(--text-primary)' }}>
-                          {card.value}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
+              <h2 style={{ marginBottom: 4, fontSize: '1.4rem' }}>Company Details</h2>
+              <ContactCard
+                icon={<AddressIcon />}
+                title="Mailing Address"
+                desc="Official company mailing address."
+                value={businessContact.address}
+              />
+              {principalContacts.map(card => (
+                <ContactCard key={card.title} icon={<PersonIcon />} {...card} />
               ))}
-
               <div className="card" style={{ background: 'var(--bg-elevated)' }}>
                 <h4 style={{ marginBottom: 14, fontSize: '0.95rem' }}>Response Times</h4>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -203,31 +172,11 @@ export default function Contact() {
                   ))}
                 </div>
               </div>
-
-              <div
-                style={{
-                  padding: '16px 20px',
-                  background: 'var(--bg-elevated)',
-                  border: '1px solid var(--border-subtle)',
-                  borderRadius: 'var(--radius-md)',
-                  fontSize: '0.85rem',
-                  color: 'var(--text-secondary)',
-                  lineHeight: 1.65,
-                }}
-              >
-                <strong style={{ color: 'var(--text-primary)', display: 'block', marginBottom: 6 }}>
-                  Not sure what you need?
-                </strong>
-                That is completely fine. Tell us what is going on in your own words and we will
-                figure out together whether we can help — and what that would look like.
-                There is no pressure to commit to anything.
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── Quick Links ───────────────────────────────────── */}
       <section className="section section-alt">
         <div className="container">
           <div className="section-header">

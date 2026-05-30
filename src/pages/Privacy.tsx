@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import ContactEmailLink from '../components/ui/ContactEmailLink'
+import { businessContact, contactEmails, phoneHref } from '../config/business'
 
 function PlainEnglish({ children }: { children: React.ReactNode }) {
   return (
@@ -59,7 +60,7 @@ export default function Privacy() {
         >
           <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
         </svg>
-        Effective Date: January 1, 2026 &nbsp;·&nbsp; Last Reviewed: January 1, 2026
+        Effective Date: May 30, 2026 &nbsp;·&nbsp; Last Reviewed: May 30, 2026
       </div>
 
       {/* ── Attorney Review Notice ────────────────────────── */}
@@ -131,7 +132,7 @@ export default function Privacy() {
         <p style={{ marginBottom: 0, marginTop: 16 }}>
           The full policy below explains all of this in detail. If you have questions,
           email us at{' '}
-          <ContactEmailLink style={{ color: 'var(--color-primary)' }} />.
+          <ContactEmailLink subject="Privacy question" style={{ color: 'var(--color-primary)' }} />.
         </p>
       </div>
 
@@ -162,7 +163,7 @@ export default function Privacy() {
         <li>Company, organization, household, or church name</li>
         <li>Account login credentials — passwords are stored in a secure hashed format and are never readable by our staff</li>
         <li>Payment details — processed through third-party payment processors; we do not store full card numbers on our servers</li>
-        <li>Messages and requests submitted through our contact form, email, or support system</li>
+        <li>Messages and requests submitted by email, phone, or through a support system</li>
       </ul>
 
       <h3>1.2 Network Monitoring Data</h3>
@@ -307,7 +308,7 @@ export default function Privacy() {
       <p>
         You may request deletion of your account and associated data at any time by contacting
         us at{' '}
-        <ContactEmailLink style={{ color: 'var(--color-primary)' }} />.
+        <ContactEmailLink subject="Data deletion request" style={{ color: 'var(--color-primary)' }} />.
         We will confirm receipt and complete the deletion within 30 days.
       </p>
 
@@ -381,7 +382,7 @@ export default function Privacy() {
       </ul>
       <p>
         To make any of these requests, contact us at{' '}
-        <ContactEmailLink style={{ color: 'var(--color-primary)' }} />. We will respond within 30 days. We will never charge you for privacy requests.
+        <ContactEmailLink subject="Privacy rights request" style={{ color: 'var(--color-primary)' }} />. We will respond within 30 days. We will never charge you for privacy requests.
       </p>
       <p>
         If you believe we have not handled your privacy request appropriately, you have the
@@ -398,7 +399,7 @@ export default function Privacy() {
         of age. We do not knowingly collect personal information from children. If you are a
         parent or guardian and believe your child has provided us with personal information
         without your consent, please contact us immediately at{' '}
-        <ContactEmailLink style={{ color: 'var(--color-primary)' }} />{' '}
+        <ContactEmailLink subject="Child privacy request" style={{ color: 'var(--color-primary)' }} />{' '}
         and we will promptly delete that information.
       </p>
 
@@ -441,15 +442,23 @@ export default function Privacy() {
       <ul>
         <li>
           <strong>Privacy inquiries:</strong>{' '}
-          <ContactEmailLink style={{ color: 'var(--color-primary)' }} />
+          <ContactEmailLink subject="Privacy inquiry" style={{ color: 'var(--color-primary)' }} />
         </li>
         <li>
-          <strong>General contact:</strong>{' '}
-          <Link to="/contact" style={{ color: 'var(--color-primary)' }}>Contact Form</Link>
+          <strong>Contact page:</strong>{' '}
+          <Link to="/contact" style={{ color: 'var(--color-primary)' }}>blackstormllc.com/contact</Link>
         </li>
         <li>
           <strong>Support:</strong>{' '}
-          <ContactEmailLink style={{ color: 'var(--color-primary)' }} />
+          <ContactEmailLink email={contactEmails.support} subject="Support request" style={{ color: 'var(--color-primary)' }} />
+        </li>
+        <li>
+          <strong>Phone:</strong>{' '}
+          <a href={phoneHref(businessContact.phone)} style={{ color: 'var(--color-primary)' }}>{businessContact.phone}</a>
+        </li>
+        <li>
+          <strong>Mailing address:</strong>{' '}
+          <span style={{ whiteSpace: 'pre-line' }}>{businessContact.address}</span>
         </li>
       </ul>
       <p>We will acknowledge privacy requests within 5 business days and resolve them within 30 days.</p>

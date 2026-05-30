@@ -177,7 +177,7 @@ export default function NetworkMonitoring() {
                   <div className="portal-dots">
                     <div className="portal-dot red"/><div className="portal-dot yellow"/><div className="portal-dot green"/>
                   </div>
-                  <div className="portal-url">portal.blackstorm.llc/dashboard</div>
+                  <div className="portal-url">portal.blackstormllc.com/dashboard</div>
                 </div>
                 <div className="portal-body">
                   <div className="portal-stat-row">

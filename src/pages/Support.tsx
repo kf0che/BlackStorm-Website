@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import ContactEmailLink from '../components/ui/ContactEmailLink'
+import { businessContact, contactEmails, emailHref, phoneHref } from '../config/business'
 
 
 const categories = [
@@ -264,9 +266,9 @@ export default function Support() {
                 Include your account email and describe the issue as specifically as you can —
                 what device, what happened, when.
               </p>
-              <Link to="/contact" className="btn btn-outline" style={{ marginTop: 16 }}>
-                Open Contact Form
-              </Link>
+              <a href={emailHref(contactEmails.support, 'Support request')} className="btn btn-outline" style={{ marginTop: 16 }}>
+                Email Support
+              </a>
             </div>
             <div className="card">
               <div className="card-header">
@@ -275,15 +277,15 @@ export default function Support() {
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                   </svg>
                 </div>
-                <h3>Contact Form</h3>
+                <h3>Call the Office</h3>
               </div>
               <p>
-                Prefer to write it out? Use our contact form to describe your situation,
-                select your topic, and add any helpful context. We read every submission.
+                Prefer to talk it through? Call the office during business hours. If we miss
+                your call, send a direct email with the details and we will follow up.
               </p>
-              <Link to="/contact" className="btn btn-primary" style={{ marginTop: 16 }}>
-                Open Contact Form
-              </Link>
+              <a href={phoneHref(businessContact.phone)} className="btn btn-primary" style={{ marginTop: 16 }}>
+                {businessContact.phone}
+              </a>
             </div>
           </div>
 
@@ -324,9 +326,10 @@ export default function Support() {
               <div>
                 <strong>Service not working?</strong>
                 <p style={{ marginTop: 4, marginBottom: 0 }}>
-                  Use the contact form or verified email once available. Describe what is not working
-                  and which devices are affected. Professional plan contact options will be provided
-                  directly after verified setup.
+                  Email{' '}
+                  <ContactEmailLink email={contactEmails.support} subject="Support request" style={{ color: 'var(--color-primary)' }} />.
+                  Describe what is not working and which devices are affected. Professional plan
+                  contact options are provided directly during onboarding.
                 </p>
               </div>
             </div>

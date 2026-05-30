@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import ContactEmailLink from '../components/ui/ContactEmailLink'
+import { businessContact, contactEmails, phoneHref } from '../config/business'
 
 function PlainEnglish({ children }: { children: React.ReactNode }) {
   return (
@@ -32,7 +33,7 @@ export default function Terms() {
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
         </svg>
-        Last Updated: January 1, 2026
+        Effective Date: May 30, 2026 &nbsp;·&nbsp; Last Reviewed: May 30, 2026
       </div>
 
       <div className="alert alert-orange" style={{ marginBottom: 32 }}>
@@ -153,7 +154,7 @@ export default function Terms() {
       <p>You agree to:</p>
       <ul>
         <li>Provide accurate and complete information when creating your account and registering devices</li>
-        <li>Maintain the confidentiality of your account credentials and notify us immediately at <ContactEmailLink style={{ color: 'var(--color-primary)' }} /> if you suspect unauthorized access</li>
+        <li>Maintain the confidentiality of your account credentials and notify us immediately at <ContactEmailLink email={contactEmails.support} subject="Possible unauthorized account access" style={{ color: 'var(--color-primary)' }} /> if you suspect unauthorized access</li>
         <li>Use the service only for devices and networks you own or have explicit authorization to monitor</li>
         <li>Comply with all applicable laws and regulations in your use of our services</li>
         <li>Keep your contact and billing information current</li>
@@ -296,7 +297,7 @@ export default function Terms() {
       <p>
         Either party may terminate service at any time. You may cancel your subscription through your customer
         portal or by contacting us at{' '}
-        <ContactEmailLink style={{ color: 'var(--color-primary)' }} />.
+        <ContactEmailLink subject="Service cancellation request" style={{ color: 'var(--color-primary)' }} />.
       </p>
       <p>
         BlackStorm may suspend or terminate your account immediately and without prior notice for:
@@ -321,7 +322,7 @@ export default function Terms() {
         These Terms are governed by the laws of the United States and the state in which BlackStorm, LLC is
         registered, without regard to conflict of law principles. Any dispute arising from these Terms or your
         use of our services shall first be addressed by contacting us directly at{' '}
-        <ContactEmailLink style={{ color: 'var(--color-primary)' }} />.
+        <ContactEmailLink subject="Terms dispute notice" style={{ color: 'var(--color-primary)' }} />.
         We will make a good-faith effort to resolve any dispute informally before either party pursues formal
         legal proceedings.
       </p>
@@ -351,10 +352,12 @@ export default function Terms() {
       <h2>17. Contact</h2>
       <p>For questions about these Terms or your service agreement:</p>
       <ul>
-        <li><strong>Legal inquiries:</strong> <ContactEmailLink style={{ color: 'var(--color-primary)' }} /></li>
-        <li><strong>Billing questions:</strong> <ContactEmailLink style={{ color: 'var(--color-primary)' }} /></li>
-        <li><strong>General support:</strong> <ContactEmailLink style={{ color: 'var(--color-primary)' }} /></li>
-        <li><strong>Contact form:</strong> <Link to="/contact" style={{ color: 'var(--color-primary)' }}>blackstorm.llc/contact</Link></li>
+        <li><strong>Legal inquiries:</strong> <ContactEmailLink subject="Legal inquiry" style={{ color: 'var(--color-primary)' }} /></li>
+        <li><strong>Billing questions:</strong> <ContactEmailLink email={contactEmails.sales} subject="Billing question" style={{ color: 'var(--color-primary)' }} /></li>
+        <li><strong>General support:</strong> <ContactEmailLink email={contactEmails.support} subject="Support request" style={{ color: 'var(--color-primary)' }} /></li>
+        <li><strong>Phone:</strong> <a href={phoneHref(businessContact.phone)} style={{ color: 'var(--color-primary)' }}>{businessContact.phone}</a></li>
+        <li><strong>Mailing address:</strong> <span style={{ whiteSpace: 'pre-line' }}>{businessContact.address}</span></li>
+        <li><strong>Contact page:</strong> <Link to="/contact" style={{ color: 'var(--color-primary)' }}>blackstormllc.com/contact</Link></li>
       </ul>
     </div>
   )

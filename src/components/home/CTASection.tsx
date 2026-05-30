@@ -4,12 +4,12 @@ const supportChannels = [
   {
     title: 'New Customer Questions',
     body: 'Not sure where to start? Tell us a little about your setup and we\'ll give you an honest answer about whether and how we can help.',
-    cta: <Link to="/contact" className="btn btn-outline">Send a Message</Link>,
+    cta: <Link to="/contact" className="btn btn-outline">Contact Us</Link>,
   },
   {
     title: 'Existing Customers',
-    body: 'Account questions, monitoring issues, or anything related to your current service — use the contact form and we\'ll respond within your plan\'s support window.',
-    cta: <Link to="/contact" className="btn btn-outline">Open Contact Form</Link>,
+    body: 'Account questions, monitoring issues, or anything related to your current service — email or call us and we\'ll respond within your plan\'s support window.',
+    cta: <Link to="/contact" className="btn btn-outline">Contact Support</Link>,
   },
   {
     title: 'Browse Before You Ask',
@@ -27,7 +27,7 @@ export default function CTASection() {
             <span className="section-label">Get in Touch</span>
             <h2 id="support-options-title">We're Easy to Reach</h2>
             <p>
-              No chatbots, no ticket queues, no waiting for a form to be routed somewhere.
+              No chatbots, no ticket queues, no waiting on an automated handoff.
               You reach a person — and we get back to you.
             </p>
           </div>

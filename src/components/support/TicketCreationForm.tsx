@@ -71,10 +71,9 @@ export default function TicketCreationForm({ onSubmit }: TicketCreationFormProps
         helpText="Include what changed, who is affected, and any useful screenshots or ticket references. Do not include passwords or secrets."
       />
       <footer className="support-form-actions">
-        <p>Placeholder: [UPDATE: connect contact form integration or customer portal ticket endpoint]</p>
+        <p>Placeholder: [POST-LAUNCH: connect customer portal ticket endpoint]</p>
         <Button type="submit">Create support ticket</Button>
       </footer>
     </form>
   )
 }
-
